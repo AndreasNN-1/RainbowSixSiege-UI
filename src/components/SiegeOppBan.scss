@@ -1,0 +1,903 @@
+.SiegeOppBans {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  .broder-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24%;
+    height: 90%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        rgba(255, 255, 255, 0.2) 90%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -18%;
+      top: -18%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        rgba(255, 255, 255, 0.2) 90%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+    }
+
+    animation: fade-in-L ease-out 2s;
+
+    @keyframes fade-in-L {
+      0% {
+        transform: scale(1.4, 2) translateY(-40%);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1) translateY(0);
+      }
+    }
+  }
+
+  .broder-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24%;
+    height: 90%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        rgba(255, 255, 255, 0.2) 90%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -18%;
+      right: -18%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        rgba(255, 255, 255, 0.2) 90%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    animation: fade-in-R ease-out 2s;
+
+    @keyframes fade-in-R {
+      0% {
+        transform: scale(1.4, 2) translateY(40%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .fog {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    animation: fog-fade-in linear 60s;
+    transform: scale(1) translateX(-0%);
+
+    @keyframes fog-fade-in {
+      0% {
+        transform: scale(1) translateX(-20%);
+      }
+
+      100% {
+        transform: scale(1) translateX(-0%);
+      }
+    }
+
+    &::before {
+      content: "";
+      height: 200%;
+      width: 120%;
+      min-width: 120%;
+      opacity: 0.2;
+      background-image: url("fog-design-clean-alpha-free-png.webp");
+      background-position: center 100%;
+      background-size: 100% 100%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -12.5vw;
+      left: 50%;
+      height: 25vw;
+      width: 25vw;
+      background: rgb(255, 255, 255);
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 1) 20%,
+        rgba(255, 255, 255, 0.5) 40%,
+        rgba(255, 255, 255, 0) 60%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: fog-flash ease-in-out 0.3s;
+      opacity: 0;
+
+      @keyframes fog-flash {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+
+        50% {
+          transform: scale(1.5);
+          opacity: 1;
+        }
+
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    .banDisplay {
+      z-index: 6;
+      margin-top: 4.2vw;
+      width: 17vw;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+      box-sizing: border-box;
+
+      .banbox {
+        width: 100%;
+        height: 100%;
+        animation: banDisplay-fade-in ease-out 0.6s;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+
+        .box {
+          position: relative;
+          width: 3.7vw;
+          height: 3.7vw;
+          background-color: rgb(231, 45, 51, 0.4);
+          padding: 0.65vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1;
+
+          svg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 2;
+
+            path {
+              fill: #e72d33;
+            }
+          }
+
+          .timer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            opacity: 0;
+          }
+
+          .banicon-con {
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(100, 100, 100);
+            .oppbanIcon {
+              width: 100%;
+              height: 100%;
+              padding: 0.1vw;
+              animation: oppbanIcon ease-out 1s;
+              filter: grayscale(100%);
+
+              @keyframes oppbanIcon {
+                0% {
+                  transform: scale(1.2);
+                }
+
+                100% {
+                  transform: scale(1);
+                }
+              }
+            }
+            .banIcon {
+              width: 10%;
+              height: 10%;
+            }
+          }
+
+          &.red {
+            background-color: rgb(231, 45, 51, 0.4);
+            svg {
+              path {
+                fill: #e72d33;
+              }
+            }
+            .timer {
+              background-color: #e72d33;
+            }
+          }
+
+          &.blue {
+            background-color: rgba(20, 111, 181, 0.4);
+            svg {
+              path {
+                fill: #1470b5;
+              }
+            }
+            .timer {
+              background-color: #1470b5;
+            }
+          }
+
+          &.active {
+            transition: height ease-in-out 0.6s;
+            height: 4.7vw;
+
+            svg path {
+              transition: fill 0.6s ease-in-out;
+              fill: white;
+            }
+
+            .timer {
+              transition: opacity 0.3s ease-in-out;
+              opacity: 1;
+              height: 0px;
+            }
+
+            @keyframes banDisplay-before {
+              0% {
+                height: 100%;
+                opacity: 1;
+              }
+
+              100% {
+                height: 0%;
+                opacity: 1;
+              }
+            }
+          }
+
+          @keyframes banDisplay-fade-in {
+            0% {
+              margin-top: -5vw;
+            }
+
+            100% {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .redteam,
+    .blueteam,
+    .showBan,
+    .showallbans {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .showBan {
+      z-index: 3;
+      animation: maps ease-in 0.5s;
+      &.red {
+        .thcon {
+          .showBanbroder-left,
+          .showBanbroder-right {
+            &::before,
+            &::after {
+              background: linear-gradient(
+                0deg,
+                rgba(231, 45, 51, 0.1) 0%,
+                rgba(231, 45, 51, 0.2) 10%,
+                rgba(231, 45, 51, 0.2) 90%,
+                rgba(231, 45, 51, 0.1) 100%
+              );
+            }
+          }
+          .showBanbroder-fog {
+            &::before {
+              filter: grayscale(100%) brightness(50%) contrast(190%) sepia(150%)
+                hue-rotate(-40deg) saturate(1500%);
+            }
+          }
+          .baninfobox {
+            .text {
+              h2 {
+                span {
+                  color: #e72d33;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.blue {
+        .thcon {
+          .showBanbroder-left,
+          .showBanbroder-right {
+            &::before,
+            &::after {
+              background: linear-gradient(
+                0deg,
+                rgba(20, 112, 181, 0.1) 0%,
+                rgba(20, 112, 181, 0.2) 10%,
+                rgba(20, 112, 181, 0.2) 90%,
+                rgba(20, 112, 181, 0.1) 100%
+              );
+            }
+          }
+          .showBanbroder-fog {
+            &::before {
+              filter: grayscale(100%) brightness(50%) contrast(190%) sepia(150%)
+                hue-rotate(190deg) saturate(1200%);
+            }
+          }
+          .baninfobox {
+            .text {
+              h2 {
+                span {
+                  color: #1470b5;
+                }
+              }
+            }
+          }
+        }
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .thcon {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+
+        .showBanbroder-left {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 24%;
+          height: 90%;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0.1) 0%,
+              rgba(255, 255, 255, 0.2) 10%,
+              rgba(255, 255, 255, 0.2) 90%,
+              rgba(255, 255, 255, 0.1) 100%
+            );
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: -18%;
+            top: -18%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0.1) 0%,
+              rgba(255, 255, 255, 0.2) 10%,
+              rgba(255, 255, 255, 0.2) 90%,
+              rgba(255, 255, 255, 0.1) 100%
+            );
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+          }
+        }
+        .showBanbroder-right {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 24%;
+          height: 90%;
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0.1) 0%,
+              rgba(255, 255, 255, 0.2) 10%,
+              rgba(255, 255, 255, 0.2) 90%,
+              rgba(255, 255, 255, 0.1) 100%
+            );
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -18%;
+            right: -18%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0.1) 0%,
+              rgba(255, 255, 255, 0.2) 10%,
+              rgba(255, 255, 255, 0.2) 90%,
+              rgba(255, 255, 255, 0.1) 100%
+            );
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+          }
+        }
+        .showBanbroder-fog {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: start;
+          align-items: end;
+          transform: scale(1) translateX(-0%);
+
+          &::before {
+            content: "";
+            height: 200%;
+            width: 120%;
+            min-width: 120%;
+            opacity: 0.2;
+            background-image: url("fog-design-clean-alpha-free-png.webp");
+            background-position: center 100%;
+            background-size: 100% 100%;
+          }
+        }
+
+        .baninfobox {
+          width: 80%;
+          height: 85%;
+          display: flex;
+          justify-content: center;
+          align-items: end;
+          position: relative;
+          background-color: aqua;
+
+          .operatorbanned {
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+          }
+          .text {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            h2 {
+              font-size: 1vw;
+              span {
+                font-size: 1vw;
+              }
+            }
+            h1 {
+              font-size: 1.2vw;
+            }
+          }
+        }
+      }
+    }
+
+    .redteam,
+    .blueteam {
+      z-index: 2;
+      display: flex;
+      justify-content: start;
+      align-items: end;
+
+      &.active {
+        z-index: 4;
+        animation: maps ease-in 0.5s;
+      }
+
+      .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .redteam-left,
+      .blueteam-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24%;
+        height: 90%;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.2) 10%,
+            rgba(255, 255, 255, 0.2) 90%,
+            rgba(255, 255, 255, 0.1) 100%
+          );
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: -18%;
+          top: -18%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.2) 10%,
+            rgba(255, 255, 255, 0.2) 90%,
+            rgba(255, 255, 255, 0.1) 100%
+          );
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+        }
+      }
+      .blueteam-right,
+      .redteam-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 24%;
+        height: 90%;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.2) 10%,
+            rgba(255, 255, 255, 0.2) 90%,
+            rgba(255, 255, 255, 0.1) 100%
+          );
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -18%;
+          right: -18%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.2) 10%,
+            rgba(255, 255, 255, 0.2) 90%,
+            rgba(255, 255, 255, 0.1) 100%
+          );
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+      .blueteam-right,
+      .blueteam-left {
+        &::before,
+        &::after {
+          background: linear-gradient(
+            0deg,
+            rgba(20, 112, 181, 0.1) 0%,
+            rgba(20, 112, 181, 0.2) 10%,
+            rgba(20, 112, 181, 0.2) 90%,
+            rgba(20, 112, 181, 0.1) 100%
+          );
+        }
+      }
+      .redteam-right,
+      .redteam-left {
+        &::before,
+        &::after {
+          background: linear-gradient(
+            0deg,
+            rgba(231, 45, 51, 0.1) 0%,
+            rgba(231, 45, 51, 0.2) 10%,
+            rgba(231, 45, 51, 0.2) 90%,
+            rgba(231, 45, 51, 0.1) 100%
+          );
+        }
+      }
+      .redteam-fog,
+      .blueteam-fog {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: end;
+        transform: scale(1) translateX(-0%);
+
+        &::before {
+          content: "";
+          height: 200%;
+          width: 120%;
+          min-width: 120%;
+          opacity: 0.2;
+          background-image: url("fog-design-clean-alpha-free-png.webp");
+          background-position: center 100%;
+          background-size: 100% 100%;
+        }
+      }
+      .redteam-fog {
+        &::before {
+          filter: grayscale(100%) brightness(50%) contrast(190%) sepia(150%)
+            hue-rotate(-40deg) saturate(1500%);
+        }
+      }
+      .blueteam-fog {
+        &::before {
+          filter: grayscale(100%) brightness(50%) contrast(190%) sepia(150%)
+            hue-rotate(190deg) saturate(1200%);
+        }
+      }
+
+      .thepickareia {
+        width: 50%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+        padding-right: 7.6vw;
+
+        h1 {
+          width: 100%;
+          font-size: 1vw;
+          text-align: start;
+          padding: 0 2vw;
+          display: flex;
+          font-family: DINRundschriftBreit2;
+          letter-spacing: -0.2vw;
+          word-spacing: 0.2vw;
+          line-height: 4.6vw;
+          font-size: 4.6vw;
+          color: white;
+          text-wrap: nowrap;
+          span {
+            padding-right: 1vw;
+            color: #1470b5;
+          }
+        }
+        .TheOpps {
+          width: 100%;
+          height: auto;
+          padding: 0 2vw;
+          padding-bottom: 2vw;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.1vw;
+          justify-content: space-evenly;
+          z-index: 1;
+
+          .Aopp {
+            flex: 1 1 min(1vw, 1fr);
+            width: 4vw;
+            height: 4vw;
+            background-color: rgba(100, 100, 100, 0.4);
+            position: relative;
+            z-index: 1;
+
+            .oppbox {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: start;
+              align-items: center;
+              flex-direction: column;
+              z-index: 1;
+              cursor: pointer;
+              position: relative;
+
+              .clicked {
+                position: absolute;
+                right: 0;
+                top: 0;
+                background-color: #1470b5;
+                width: 1vw;
+                height: 1vw;
+                font-size: 0.8vw;
+                line-height: 0.8vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+
+              .opimg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                margin: 0;
+              }
+
+              p {
+                opacity: 0;
+                font-size: 0.7vw;
+                line-height: 0.7vw;
+                margin: 0;
+                padding: 0;
+                transform: translateY(-0.4vw);
+                color: black;
+                font-weight: 500;
+              }
+            }
+            &:hover {
+              z-index: 10;
+
+              .oppbox {
+                transform: scale(1.4);
+                background-color: #9bd1fa;
+                height: auto;
+
+                p {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+      .oppinfo {
+        width: 50%;
+        height: 100%;
+        background-color: #e72d3315;
+        z-index: 1;
+        overflow-y: scroll;
+      }
+    }
+
+    .showallbans {
+      z-index: 5;
+      background-color: white;
+      animation: maps ease-in 0.5s;
+    }
+  }
+  @keyframes maps {
+    0% {
+      clip-path: polygon(55% 0, 55% 0, 45% 100%, 45% 100%);
+    }
+
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}

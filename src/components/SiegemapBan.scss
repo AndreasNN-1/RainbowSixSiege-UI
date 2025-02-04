@@ -1,0 +1,1547 @@
+.SiegemapBan {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .main {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 5;
+        flex-direction: column;
+
+        .broder-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24%;
+            height: 90%;
+    
+            &.avtive {
+                z-index: 20;
+            }
+    
+    
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background:
+                    linear-gradient(0deg, rgba(20, 112, 181, 0.1) 0%, rgba(0, 145, 255, 0.2) 10%, rgba(0, 145, 255, 0.2) 90%, rgba(20, 112, 181, 0.1) 100%);
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+            }
+    
+            &::after {
+                content: "";
+                position: absolute;
+                left: -18%;
+                top: -18%;
+                width: 100%;
+                height: 100%;
+                background:
+                    linear-gradient(0deg, rgba(20, 112, 181, 0.1) 0%, rgba(0, 145, 255, 0.2) 10%, rgba(0, 145, 255, 0.2) 90%, rgba(20, 112, 181, 0.1) 100%);
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+            }
+    
+            animation: fade-in-L ease-out 2s;
+        }
+
+        .broder-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 24%;
+            height: 90%;
+    
+            &.avtive {
+                z-index: 20;
+            }
+    
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background:
+                    linear-gradient(0deg, rgba(20, 112, 181, 0.1) 0%, rgba(0, 145, 255, 0.2) 10%, rgba(0, 145, 255, 0.2) 90%, rgba(20, 112, 181, 0.1) 100%);
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+            }
+    
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -18%;
+                right: -18%;
+                width: 100%;
+                height: 100%;
+                background:
+                    linear-gradient(0deg, rgba(20, 112, 181, 0.1) 0%, rgba(0, 145, 255, 0.2) 10%, rgba(0, 145, 255, 0.2) 90%, rgba(20, 112, 181, 0.1) 100%);
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+            }
+    
+            animation: fade-in-R ease-out 2s;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            width: 90vw;
+            height: 90vw;
+            background: rgb(0, 145, 255);
+            background: radial-gradient(circle, rgba(0, 145, 255, 0.7) 0%, rgba(0, 145, 255, 0.4) 40%, rgba(0, 145, 255, 0) 70%, rgba(0, 145, 255, 0) 100%);
+            background-repeat: no-repeat;
+            animation: fade-in-M ease-out 1.4s;
+            z-index: -1;
+        }
+
+        #title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: auto;
+            z-index: -1;
+
+            p {
+                overflow: hidden;
+                width: 100%;
+                height: auto;
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: DINRundschriftBreitItalic;
+                    letter-spacing: 0;
+                    word-spacing: 0.2vw;
+                    line-height: 2.5vw;
+                    font-size: 2.5vw;
+                    opacity: 0;
+                    text-wrap: nowrap;
+                    animation: fade-in-text2 ease-in-out 4s;
+
+                    @keyframes fade-in-text2 {
+                        0% {
+                            margin-top: -6vw;
+                            line-height: 5vw;
+                            font-size: 5vw;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            margin-top: 0vw;
+                            line-height: 2.5vw;
+                            font-size: 2.5vw;
+                        }
+
+                        80% {
+                            margin-top: 0vw;
+                            line-height: 2.5vw;
+                            font-size: 2.5vw;
+                        }
+
+                        100% {
+                            margin-top: -6vw;
+                            line-height: 5vw;
+                            font-size: 5vw;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            h1 {
+                overflow: hidden;
+                width: 100%;
+                height: auto;
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: DINRundschriftBreit;
+                    letter-spacing: 0;
+                    word-spacing: 0.2vw;
+                    line-height: 5.5vw;
+                    font-size: 5.5vw;
+                    color: white;
+                    opacity: 0;
+                    animation: fade-in-text ease-in-out 4s;
+                    text-wrap: nowrap;
+
+                    @keyframes fade-in-text {
+                        0% {
+                            margin-top: -11vw;
+                            line-height: 10vw;
+                            font-size: 10vw;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            margin-top: 0vw;
+                            line-height: 5.5vw;
+                            font-size: 5.5vw;
+                        }
+
+                        80% {
+                            margin-top: 0vw;
+                            line-height: 5.5vw;
+                            font-size: 5.5vw;
+                        }
+
+                        100% {
+                            opacity: 1;
+                            margin-top: -11vw;
+                            line-height: 10vw;
+                            font-size: 10vw;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ban-box {
+            margin-top: 7.5vw;
+            width: 94.8vw;
+            height: 40vw;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10;
+
+            #title2 {
+                width: auto;
+                height: auto;
+                cursor: default;
+
+                p {
+                    width: 100%;
+                    height: 1.8vw;
+                    overflow: hidden;
+
+                    span {
+                        max-height: 2.5vw;
+                        display: flex;
+                        flex-direction: column;
+                        font-family: DINRundschriftBreit;
+                        letter-spacing: 0;
+                        word-spacing: 0.2vw;
+                        line-height: 1.8vw;
+                        font-size: 1.8vw;
+                        text-wrap: nowrap;
+                        animation: fade-in-text3 ease-out 1.5s;
+
+                        @keyframes fade-in-text3 {
+                            0% {
+                                margin-top: 2vw;
+                            }
+
+                            100% {
+                                margin-top: 0vw;
+                            }
+                        }
+                    }
+                }
+
+                h1 {
+                    width: 100%;
+                    height: 4.6vw;
+                    overflow: hidden;
+
+                    span {
+                        display: flex;
+                        flex-direction: column;
+                        font-family: DINRundschriftBreit;
+                        letter-spacing: -0.2vw;
+                        word-spacing: 0.2vw;
+                        line-height: 4.6vw;
+                        font-size: 4.6vw;
+                        color: white;
+                        animation: fade-in-text4 ease-out 1.5s;
+                        text-wrap: nowrap;
+
+                        @keyframes fade-in-text4 {
+                            0% {
+                                margin-top: 5vw;
+                            }
+
+                            100% {
+                                margin-top: 0vw;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .map-list {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.6vw;
+                width: 100%;
+                height: 22vw;
+                margin: 3vw 0;
+                margin-bottom: 2.5vw;
+
+                .map-item {
+                    width: 20%;
+                    height: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    opacity: 0;
+                    margin-bottom: -1.5vw;
+                    transition: opacity 0.4s ease-in-out, margin-bottom 0.6s ease-in-out, transform 0.02s ease-in-out;
+
+                    &.visible {
+                        opacity: 1;
+                        margin-bottom: 0;
+                    }
+
+                    img {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        box-sizing: border-box;
+                    }
+
+                    .map-item-text {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 40%;
+                        background: rgb(124, 148, 164);
+                        background: linear-gradient(0deg, rgba(124, 148, 164, 1) 0%, rgba(124, 148, 164, 1) 45%, rgba(124, 148, 164, 0.75) 80%, rgba(124, 148, 164, 0.5) 90%, rgba(124, 148, 164, 0) 100%);
+                        display: flex;
+                        justify-content: start;
+                        align-items: end;
+
+                        p {
+                            width: 100%;
+                            z-index: 5;
+                            padding: 1vw;
+                            font-family: DINRundschriftBreitItalic2;
+                            font-size: 2.4vw;
+                            line-height: 2.4vw;
+                            letter-spacing: 0vw;
+                            word-spacing: 0vw;
+                            text-align: start;
+                            text-wrap: nowrap;
+                        }
+                    }
+
+                    .mapPicks {
+                        opacity: 0;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background-color: #1774bc;
+                        width: 3.7vw;
+                        height: 3.7vw;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 3vw;
+                        line-height: 3vw;
+                        font-family: DINRundschriftBreit;
+
+                        &.visible {
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover {
+                        transform: scale(1.06);
+                        z-index: 5;
+
+                        .map-item-text {
+                            background: rgb(48, 155, 217);
+                            background: linear-gradient(0deg, rgba(48, 155, 217, 1) 0%, rgba(48, 155, 217, 1) 45%, rgba(48, 155, 217, 0.75) 80%, rgba(48, 155, 217, 0.5) 90%, rgba(48, 155, 217, 0) 100%);
+                        }
+                    }
+                }
+            }
+
+            .noban {
+                position: relative;
+                width: 31vw;
+                height: 3.7vw;
+                background-color: #8094a6;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                cursor: pointer;
+
+                p {
+                    flex: 1;
+                    padding-left: 1.4vw;
+                    font-size: 2.3vw;
+                    line-height: 2.3vw;
+                    letter-spacing: 0;
+                    font-family: DINRundschriftBreitItalic2;
+                    text-align: start;
+                    color: black;
+                }
+
+                .nobanPick {
+                    opacity: 0;
+                    background-color: #1774bc;
+                    width: 3.7vw;
+                    height: 3.7vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 3vw;
+                    line-height: 3vw;
+                    font-family: DINRundschriftBreit;
+
+                    &.visible {
+                        opacity: 1;
+                    }
+                }
+
+                &:hover {
+                    background-color: #309ad9;
+                }
+            }
+
+            &.pickedBanComplete {
+                #title2 {
+                    p {
+                        span {
+                            animation: fade-in-text5 ease-out 2s;
+
+                            @keyframes fade-in-text5 {
+                                0% {
+                                    margin-top: 0vw;
+                                }
+
+                                100% {
+                                    margin-top: -2vw;
+                                }
+                            }
+                        }
+                    }
+
+                    h1 {
+                        span {
+                            animation: fade-in-text6 ease-out 2s;
+
+                            @keyframes fade-in-text6 {
+                                0% {
+                                    margin-top: 0vw;
+                                }
+
+                                100% {
+                                    margin-top: -5vw;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .map-list {
+                    .map-item {
+                        cursor: default;
+                        overflow: hidden;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 1;
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(100, 100, 100, 0.5);
+                            background-image: linear-gradient(-60deg,
+                                    rgba(0, 0, 0, 0) 0%,
+                                    rgba(0, 0, 0, 0) 2%,
+                                    rgb(100, 100, 100) 2.2%,
+                                    rgba(0, 0, 0, 0) 2.4%,
+
+                                    rgba(0, 0, 0, 0) 4%,
+                                    rgb(100, 100, 100) 4.2%,
+                                    rgba(0, 0, 0, 0) 4.4%,
+
+                                    rgba(0, 0, 0, 0) 6%,
+                                    rgb(100, 100, 100) 6.2%,
+                                    rgba(0, 0, 0, 0) 6.4%,
+
+                                    rgba(0, 0, 0, 0) 8%,
+                                    rgb(100, 100, 100) 8.2%,
+                                    rgba(0, 0, 0, 0) 8.4%,
+
+                                    rgba(0, 0, 0, 0) 10%,
+                                    rgb(100, 100, 100) 10.2%,
+                                    rgba(0, 0, 0, 0) 10.4%,
+
+
+                                    rgba(0, 0, 0, 0) 12%,
+                                    rgb(100, 100, 100) 12.2%,
+                                    rgba(0, 0, 0, 0) 12.4%,
+
+                                    rgba(0, 0, 0, 0) 14%,
+                                    rgb(100, 100, 100) 14.2%,
+                                    rgba(0, 0, 0, 0) 14.4%,
+
+                                    rgba(0, 0, 0, 0) 16%,
+                                    rgb(100, 100, 100) 16.2%,
+                                    rgba(0, 0, 0, 0) 16.4%,
+
+                                    rgba(0, 0, 0, 0) 18%,
+                                    rgb(100, 100, 100) 18.2%,
+                                    rgba(0, 0, 0, 0) 18.4%,
+
+                                    rgba(0, 0, 0, 0) 20%,
+                                    rgb(100, 100, 100) 20.2%,
+                                    rgba(0, 0, 0, 0) 20.4%,
+
+
+
+                                    rgba(0, 0, 0, 0) 22%,
+                                    rgb(100, 100, 100) 22.2%,
+                                    rgba(0, 0, 0, 0) 22.4%,
+
+                                    rgba(0, 0, 0, 0) 24%,
+                                    rgb(100, 100, 100) 24.2%,
+                                    rgba(0, 0, 0, 0) 24.4%,
+
+                                    rgba(0, 0, 0, 0) 26%,
+                                    rgb(100, 100, 100) 26.2%,
+                                    rgba(0, 0, 0, 0) 26.4%,
+
+                                    rgba(0, 0, 0, 0) 28%,
+                                    rgb(100, 100, 100) 28.2%,
+                                    rgba(0, 0, 0, 0) 28.4%,
+
+                                    rgba(0, 0, 0, 0) 30%,
+                                    rgb(100, 100, 100) 30.2%,
+                                    rgba(0, 0, 0, 0) 30.4%,
+
+
+
+
+                                    rgba(0, 0, 0, 0) 32%,
+                                    rgb(100, 100, 100) 32.2%,
+                                    rgba(0, 0, 0, 0) 32.4%,
+
+                                    rgba(0, 0, 0, 0) 34%,
+                                    rgb(100, 100, 100) 34.2%,
+                                    rgba(0, 0, 0, 0) 34.4%,
+
+                                    rgba(0, 0, 0, 0) 36%,
+                                    rgb(100, 100, 100) 36.2%,
+                                    rgba(0, 0, 0, 0) 36.4%,
+
+                                    rgba(0, 0, 0, 0) 38%,
+                                    rgb(100, 100, 100) 38.2%,
+                                    rgba(0, 0, 0, 0) 38.4%,
+
+                                    rgba(0, 0, 0, 0) 40%,
+                                    rgb(100, 100, 100) 40.2%,
+                                    rgba(0, 0, 0, 0) 40.4%,
+
+
+
+                                    rgba(0, 0, 0, 0) 42%,
+                                    rgb(100, 100, 100) 42.2%,
+                                    rgba(0, 0, 0, 0) 42.4%,
+
+                                    rgba(0, 0, 0, 0) 44%,
+                                    rgb(100, 100, 100) 44.2%,
+                                    rgba(0, 0, 0, 0) 44.4%,
+
+                                    rgba(0, 0, 0, 0) 46%,
+                                    rgb(100, 100, 100) 46.2%,
+                                    rgba(0, 0, 0, 0) 46.4%,
+
+                                    rgba(0, 0, 0, 0) 48%,
+                                    rgb(100, 100, 100) 48.2%,
+                                    rgba(0, 0, 0, 0) 48.4%,
+
+                                    rgba(0, 0, 0, 0) 50%,
+                                    rgb(100, 100, 100) 50.2%,
+                                    rgba(0, 0, 0, 0) 50.4%,
+
+
+
+
+                                    rgba(0, 0, 0, 0) 52%,
+                                    rgb(100, 100, 100) 52.2%,
+                                    rgba(0, 0, 0, 0) 52.4%,
+
+                                    rgba(0, 0, 0, 0) 54%,
+                                    rgb(100, 100, 100) 54.2%,
+                                    rgba(0, 0, 0, 0) 54.4%,
+
+                                    rgba(0, 0, 0, 0) 56%,
+                                    rgb(100, 100, 100) 56.2%,
+                                    rgba(0, 0, 0, 0) 56.4%,
+
+                                    rgba(0, 0, 0, 0) 58%,
+                                    rgb(100, 100, 100) 58.2%,
+                                    rgba(0, 0, 0, 0) 58.4%,
+
+                                    rgba(0, 0, 0, 0) 60%,
+                                    rgb(100, 100, 100) 60.2%,
+                                    rgba(0, 0, 0, 0) 60.4%,
+
+
+
+                                    rgba(0, 0, 0, 0) 62%,
+                                    rgb(100, 100, 100) 62.2%,
+                                    rgba(0, 0, 0, 0) 62.4%,
+
+                                    rgba(0, 0, 0, 0) 64%,
+                                    rgb(100, 100, 100) 64.2%,
+                                    rgba(0, 0, 0, 0) 64.4%,
+
+                                    rgba(0, 0, 0, 0) 66%,
+                                    rgb(100, 100, 100) 66.2%,
+                                    rgba(0, 0, 0, 0) 66.4%,
+
+                                    rgba(0, 0, 0, 0) 68%,
+                                    rgb(100, 100, 100) 68.2%,
+                                    rgba(0, 0, 0, 0) 68.4%,
+
+                                    rgba(0, 0, 0, 0) 70%,
+                                    rgb(100, 100, 100) 70.2%,
+                                    rgba(0, 0, 0, 0) 70.4%,
+
+
+                                    rgba(0, 0, 0, 0) 72%,
+                                    rgb(100, 100, 100) 72.2%,
+                                    rgba(0, 0, 0, 0) 72.4%,
+
+                                    rgba(0, 0, 0, 0) 74%,
+                                    rgb(100, 100, 100) 74.2%,
+                                    rgba(0, 0, 0, 0) 74.4%,
+
+                                    rgba(0, 0, 0, 0) 76%,
+                                    rgb(100, 100, 100) 76.2%,
+                                    rgba(0, 0, 0, 0) 76.4%,
+
+                                    rgba(0, 0, 0, 0) 78%,
+                                    rgb(100, 100, 100) 78.2%,
+                                    rgba(0, 0, 0, 0) 78.4%,
+
+                                    rgba(0, 0, 0, 0) 80%,
+                                    rgb(100, 100, 100) 80.2%,
+                                    rgba(0, 0, 0, 0) 80.4%,
+
+
+
+                                    rgba(0, 0, 0, 0) 82%,
+                                    rgb(100, 100, 100) 82.2%,
+                                    rgba(0, 0, 0, 0) 82.4%,
+
+                                    rgba(0, 0, 0, 0) 84%,
+                                    rgb(100, 100, 100) 84.2%,
+                                    rgba(0, 0, 0, 0) 84.4%,
+
+                                    rgba(0, 0, 0, 0) 86%,
+                                    rgb(100, 100, 100) 86.2%,
+                                    rgba(0, 0, 0, 0) 86.4%,
+
+                                    rgba(0, 0, 0, 0) 88%,
+                                    rgb(100, 100, 100) 88.2%,
+                                    rgba(0, 0, 0, 0) 88.4%,
+
+                                    rgba(0, 0, 0, 0) 90%,
+                                    rgb(100, 100, 100) 90.2%,
+                                    rgba(0, 0, 0, 0) 90.4%,
+
+
+
+                                    rgba(0, 0, 0, 0) 92%,
+                                    rgb(100, 100, 100) 92.2%,
+                                    rgba(0, 0, 0, 0) 92.4%,
+
+                                    rgba(0, 0, 0, 0) 94%,
+                                    rgb(100, 100, 100) 94.2%,
+                                    rgba(0, 0, 0, 0) 94.4%,
+
+                                    rgba(0, 0, 0, 0) 96%,
+                                    rgb(100, 100, 100) 96.2%,
+                                    rgba(0, 0, 0, 0) 96.4%,
+
+                                    rgba(0, 0, 0, 0) 98%,
+                                    rgb(100, 100, 100) 98.2%,
+                                    rgba(0, 0, 0, 0) 98.4%,
+
+                                    rgba(0, 0, 0, 0) 100%);
+                        }
+
+                        &:hover {
+                            transform: scale(1);
+
+                            .map-item-text {
+                                background: rgb(124, 148, 164);
+                                background: linear-gradient(0deg, rgba(124, 148, 164, 1) 0%, rgba(124, 148, 164, 1) 45%, rgba(124, 148, 164, 0.75) 80%, rgba(124, 148, 164, 0.5) 90%, rgba(124, 148, 164, 0) 100%);
+                            }
+                        }
+
+                        &:nth-child(1) {
+                            opacity: 0;
+
+                            &::before,
+                            img,
+                            .map-item-text {
+                                animation: map-item-inner-R ease-in 2s;
+                            }
+
+                            animation: map-item1 ease-in 2s;
+
+                            @keyframes map-item1 {
+                                0% {
+                                    transform: translateX(0) scale(1);
+                                    opacity: 1;
+                                }
+
+                                35% {
+                                    transform: translateX(52%) scale(0.8);
+                                    opacity: 0.6;
+                                }
+
+                                75% {
+                                    transform: translateX(88.5%) scale(0.7);
+                                    opacity: 0.6;
+                                }
+
+                                100% {
+                                    opacity: 0;
+                                    transform: translateX(100%) scale(0.3);
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            opacity: 0;
+
+                            &::before,
+                            img,
+                            .map-item-text {
+                                animation: map-item-inner-R ease-in 2s;
+                            }
+
+                            animation: map-item2 ease-in 2s;
+
+                            @keyframes map-item2 {
+                                0% {
+                                    transform: translateX(0) scale(1);
+                                    opacity: 1;
+                                }
+
+                                35% {
+                                    transform: translateX(20%) scale(0.8);
+                                    opacity: 0.6;
+                                }
+
+                                75% {
+                                    transform: translateX(30%) scale(0.7);
+                                    opacity: 0.6;
+                                }
+
+                                100% {
+                                    transform: translateX(50%) scale(0.3);
+                                    opacity: 0;
+                                }
+                            }
+                        }
+
+                        &:nth-child(3) {
+                            opacity: 0;
+                            animation: map-item3 ease-in 2s;
+
+                            @keyframes map-item3 {
+                                0% {
+                                    transform: scale(1);
+                                    opacity: 1;
+                                }
+
+                                35% {
+                                    transform: scale(0.8);
+                                    opacity: 0.6;
+                                }
+
+                                75% {
+                                    transform: scale(0.7);
+                                    opacity: 0.6;
+                                }
+
+                                100% {
+                                    transform: scale(0.3);
+                                    opacity: 0;
+                                }
+                            }
+                        }
+
+                        &:nth-child(4) {
+                            opacity: 0;
+
+                            &::before,
+                            img,
+                            .map-item-text {
+                                animation: map-item-inner-L ease-in 2s;
+                            }
+
+                            animation: map-item4 ease-in 2s;
+
+                            @keyframes map-item4 {
+                                0% {
+                                    transform: translateX(0) scale(1);
+                                    opacity: 1;
+                                }
+
+                                35% {
+                                    transform: translateX(-20%) scale(0.8);
+                                    opacity: 0.6;
+                                }
+
+                                75% {
+                                    transform: translateX(-30%) scale(0.7);
+                                    opacity: 0.6;
+                                }
+
+                                100% {
+                                    transform: translateX(-50%) scale(0.3);
+                                    opacity: 0;
+                                }
+                            }
+                        }
+
+                        &:nth-child(5) {
+                            opacity: 0;
+
+                            &::before,
+                            img,
+                            .map-item-text {
+                                animation: map-item-inner-L ease-in 2s;
+                            }
+
+                            animation: map-item5 ease-in 2s;
+
+                            @keyframes map-item5 {
+                                0% {
+                                    transform: translateX(0) scale(1);
+                                    opacity: 1;
+                                }
+
+                                35% {
+                                    transform: translateX(-52%) scale(0.8);
+                                    opacity: 0.6;
+                                }
+
+                                75% {
+                                    transform: translateX(-88.5%) scale(0.7);
+                                    opacity: 0.6;
+                                }
+
+                                100% {
+                                    transform: translateX(-100%) scale(0.3);
+                                    opacity: 0;
+                                }
+                            }
+                        }
+
+                        @keyframes map-item-inner-R {
+                            0% {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+
+                            35% {
+                                transform: translateX(15%);
+                                opacity: 1;
+                            }
+
+                            100% {
+                                transform: translateX(40%);
+                                opacity: 1;
+                            }
+                        }
+
+                        @keyframes map-item-inner-L {
+                            0% {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+
+                            35% {
+                                transform: translateX(-15%);
+                                opacity: 1;
+                            }
+
+                            100% {
+                                transform: translateX(-40%);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                .noban {
+                    cursor: default;
+                    opacity: 0;
+
+                    &:hover {
+                        background-color: #8094a6;
+                    }
+
+                    animation: fadenoban ease-in-out 2s;
+
+                    @keyframes fadenoban {
+                        0% {
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+
+                        100% {
+                            transform: scale(0);
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mapbanResults {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 15;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: column;
+            opacity: 1;
+
+            .con {
+                height: 79%;
+                width: 100%;
+                position: relative;
+
+                #title3 {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, 0px);
+                    width: auto;
+                    height: auto;
+                    cursor: default;
+                    z-index: 1;
+
+                    p {
+                        width: 100%;
+                        height: 1.8vw;
+                        overflow: hidden;
+
+                        span {
+                            max-height: 2.5vw;
+                            display: flex;
+                            flex-direction: column;
+                            font-family: DINRundschriftBreit;
+                            letter-spacing: 0;
+                            word-spacing: 0.2vw;
+                            line-height: 1.8vw;
+                            font-size: 1.8vw;
+                            text-wrap: nowrap;
+                        }
+                    }
+
+                    h1 {
+                        width: 100%;
+                        height: 4.6vw;
+                        overflow: hidden;
+
+                        span {
+                            display: flex;
+                            flex-direction: column;
+                            font-family: DINRundschriftBreit;
+                            letter-spacing: -0.2vw;
+                            word-spacing: 0.2vw;
+                            line-height: 4.6vw;
+                            font-size: 4.6vw;
+                            color: white;
+                            text-wrap: nowrap;
+                        }
+                    }
+                }
+
+                .maps {
+                    width: auto;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    box-sizing: border-box;
+                    overflow: hidden;
+
+                    animation: maps ease-in 1.5s;
+
+                    @keyframes maps {
+                        0% {
+                            clip-path: polygon(55% 0, 55% 0, 45% 100%, 45% 100%);
+                        }
+
+                        100% {
+                            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                        }
+                    }
+
+                    .map {
+                        position: relative;
+                        width: 100%;
+                        min-width: 34vw;
+                        height: 100%;
+                        clip-path: polygon(50% 0, 100% 0, 50% 100%, 0% 100%);
+                        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+                        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+                        mask-size: 100% 100%;
+                        -webkit-mask-size: 100% 100%;
+
+                        &.toggle {
+                            img {
+                                opacity: 0.7;
+                                filter: grayscale(70%);
+                            }
+                        }
+
+                        &.selected {
+                            img {
+                                animation: imgmove ease-in 3s;
+
+                                @keyframes imgmove {
+                                    0% {
+                                        transform: scale(1);
+                                    }
+
+                                    100% {
+                                        transform: scale(1.15);
+                                    }
+                                }
+                            }
+                        }
+
+                        &.notSelected {
+                            img {
+                                opacity: 0.7;
+                                filter: grayscale(100%);
+                                animation: imgmove2 ease-in 5s;
+
+                                @keyframes imgmove2 {
+                                    0% {
+                                        opacity: 1;
+                                        filter: grayscale(0%);
+                                    }
+
+                                    20% {
+                                        opacity: 0.7;
+                                        filter: grayscale(70%);
+                                    }
+
+                                    100% {
+                                        opacity: 0.7;
+                                        filter: grayscale(70%);
+                                    }
+                                }
+                            }
+                        }
+
+                        .ban-banner {
+                            position: absolute;
+                            top: 60%;
+                            left: 0%;
+                            width: 100%;
+                            height: 3.6vw;
+                            padding-right: 4.6vw;
+                            z-index: 10;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .banner {
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+
+                                .banIcon {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 3vw;
+                                    height: 3vw;
+                                    object-fit: contain;
+                                    z-index: 7;
+
+                                    animation: bannedicon ease-in 2s;
+
+                                    @keyframes bannedicon {
+                                        0% {
+                                            transform: translate(-50%, -50%) scale(5);
+                                            opacity: 0;
+                                        }
+
+                                        60% {
+                                            transform: translate(-50%, -50%) scale(5);
+                                            opacity: 0;
+                                        }
+
+                                        100% {
+                                            transform: translate(-50%, -50%) scale(1);
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+
+                                .double-ban {
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    &::before {
+                                        content: "";
+                                        width: 50%;
+                                        height: 100%;
+                                        background-color: rgb(231, 45, 51, 0.9);
+                                        clip-path: polygon(1.3vw 0vw, 100% 0, 7.3vw 20vw, 0% 3.6vw);
+                                        transform: translateX(0.6vw);
+
+                                        animation: redbefore ease-in 3s;
+
+                                        @keyframes redbefore {
+                                            0% {
+                                                clip-path: polygon(14.7vw 0vw, 100% 0, 7.3vw 19vw, 0% 38vw);
+                                                opacity: 0;
+                                            }
+
+                                            62% {
+                                                clip-path: polygon(14.7vw 0vw, 100% 0, 7.3vw 19vw, 0% 38vw);
+                                                opacity: 0;
+                                            }
+
+                                            63% {
+                                                clip-path: polygon(14.7vw 0vw, 100% 0, 7.3vw 19vw, 0% 38vw);
+                                                opacity: 1;
+                                            }
+
+                                            100% {
+                                                clip-path: polygon(1.3vw 0vw, 100% 0, 7.3vw 20vw, 0% 3.6vw);
+                                                opacity: 1;
+                                            }
+                                        }
+                                    }
+
+                                    &::after {
+                                        content: "";
+                                        width: 50%;
+                                        height: 100%;
+                                        background-color: rgba(20, 111, 181, 0.9);
+                                        clip-path: polygon(1.3vw 0vw, 14.6vw 0, 7.3vw 19vw, 0% 3.6vw);
+
+                                        transform: translateX(-0.6vw);
+
+                                        animation: bluebefore ease-in 3s;
+
+                                        @keyframes bluebefore {
+                                            0% {
+                                                clip-path: polygon(1.3vw 0vw, 1.3vw 0, 0vw 3.6vw, 0% 3.6vw);
+                                                opacity: 0;
+                                            }
+
+                                            62% {
+                                                clip-path: polygon(1.3vw 0vw, 1.3vw 0, 0vw 3.6vw, 0% 3.6vw);
+                                                opacity: 0;
+                                            }
+
+                                            63% {
+                                                clip-path: polygon(1.3vw 0vw, 1.3vw 0, 0vw 3.6vw, 0% 3.6vw);
+                                                opacity: 1;
+                                            }
+
+                                            100% {
+                                                clip-path: polygon(1.3vw 0vw, 14.6vw 0, 7.3vw 19vw, 0% 3.6vw);
+                                                opacity: 1;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .single-ban {
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    &.opponent {
+                                        &::before {
+                                            background-color: rgb(231, 45, 51, 0.9);
+                                        }
+                                    }
+
+                                    &.allies {
+                                        &::before {
+                                            background-color: rgba(20, 111, 181, 0.9);
+                                        }
+                                    }
+
+                                    &::before {
+                                        content: "";
+                                        width: 100%;
+                                        height: 100%;
+                                        clip-path: polygon(1.3vw 0vw, 100% 0, 7.3vw 20vw, 0% 3.6vw);
+
+                                        animation: singlebefore ease-in 2.8s;
+
+                                        @keyframes singlebefore {
+                                            0% {
+                                                clip-path: polygon(15.4vw 0vw, 15.4vw 0, 7.3vw 20vw, 13.95vw 3.6vw);
+                                                opacity: 0;
+                                            }
+
+                                            67% {
+                                                clip-path: polygon(15.4vw 0vw, 15.4vw 0, 7.3vw 20vw, 13.95vw 3.6vw);
+                                                opacity: 0;
+                                            }
+
+                                            68% {
+                                                clip-path: polygon(15.4vw 0vw, 15.4vw 0, 7.3vw 20vw, 13.95vw 3.6vw);
+                                                opacity: 1;
+                                            }
+
+                                            100% {
+                                                clip-path: polygon(1.3vw 0vw, 100% 0, 7.3vw 20vw, 0% 3.6vw);
+                                                opacity: 1;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+
+                            &.banned {
+                                opacity: 0.4;
+                                filter: grayscale(100%);
+                                animation: bannedimg ease-in-out 2.4s;
+
+                                @keyframes bannedimg {
+                                    0% {
+                                        opacity: 1;
+                                        filter: grayscale(0%);
+                                    }
+
+                                    70% {
+                                        opacity: 1;
+                                        filter: grayscale(0%);
+                                    }
+
+                                    100% {
+                                        opacity: 0.3;
+                                        filter: grayscale(100%);
+                                    }
+                                }
+                            }
+                        }
+
+                        p {
+                            position: absolute;
+                            top: 73%;
+                            left: 38%;
+                            transform: translate(-50%, -50%);
+                            font-size: 2.5vw;
+                            color: white;
+                            font-family: DINRundschriftBreitItalic2;
+                        }
+
+                        &:nth-child(1) {
+                            transform: translateX(96.8%);
+                        }
+
+                        &:nth-child(2) {
+                            transform: translateX(48.5%);
+                        }
+
+                        &:nth-child(4) {
+                            transform: translateX(-48.5%);
+                        }
+
+                        &:nth-child(5) {
+                            transform: translateX(-96.8%);
+                        }
+                    }
+                }
+            }
+        }
+
+        .selectedMap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 19;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: column;
+            opacity: 1;
+            background-color: rgb(0, 0, 0);
+
+            &.item0 {
+                animation: selectedMap0 ease-in 2.5s;
+
+                @keyframes selectedMap0 {
+                    0% {
+                        transform: translateX(-35%);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    60% {
+                        transform: translateX(-35%);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    100% {
+                        transform: translateX(0);
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    }
+                }
+            }
+
+            &.item1 {
+                animation: selectedMap1 ease-in 2.5s;
+
+                @keyframes selectedMap1 {
+                    0% {
+                        transform: translateX(-17%);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    60% {
+                        transform: translateX(-17%);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    100% {
+                        transform: translateX(0);
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    }
+                }
+            }
+
+            &.item2 {
+                animation: selectedMap2 ease-in 2.5s;
+
+                @keyframes selectedMap2 {
+                    0% {
+                        transform: translateX(0);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    60% {
+                        transform: translateX(0);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    100% {
+                        transform: translateX(0);
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    }
+                }
+            }
+
+            &.item3 {
+                animation: selectedMap3 ease-in 2.5s;
+
+                @keyframes selectedMap3 {
+                    0% {
+                        transform: translateX(17%);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    60% {
+                        transform: translateX(17%);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    100% {
+                        transform: translateX(0);
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    }
+                }
+            }
+
+            &.item4 {
+                animation: selectedMap4 ease-in 2.5s;
+
+                @keyframes selectedMap4 {
+                    0% {
+                        transform: translateX(35%);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    60% {
+                        transform: translateX(35%);
+                        clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                    }
+
+                    100% {
+                        transform: translateX(0);
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    }
+                }
+            }
+
+            .continer {
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .mapInfo {
+                    position: absolute;
+                    bottom: 10%;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+
+                    .mapTitle {
+                        display: flex;
+                        flex-direction: column;
+                        font-family: DINRundschriftBreitItalic;
+                        letter-spacing: 0;
+                        word-spacing: 0.2vw;
+                        line-height: 3vw;
+                        font-size: 3vw;
+                    }
+
+                    .mapname {
+                        display: flex;
+                        flex-direction: column;
+                        font-family: DINRundschriftBreitItalic;
+                        letter-spacing: 0;
+                        word-spacing: 0.2vw;
+                        line-height: 6vw;
+                        font-size: 6vw;
+                    }
+                }
+            }
+
+        }
+
+        .fadeOut {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 55;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: column;
+            opacity: 1;
+            background-color: rgb(0, 0, 0);
+            animation: fadeOut ease-in 1s;
+
+            @keyframes fadeOut {
+                0% {
+                    clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                }
+
+                60% {
+                    clip-path: polygon(65% 0, 65% 0, 42% 100%, 42% 100%);
+                }
+
+                100% {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    @keyframes fade-in-M {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, 60%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(-50%, 50%);
+        }
+    }
+
+    @keyframes fade-in-L {
+        0% {
+            transform: scale(1.4, 2) translateY(-40%);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    @keyframes fade-in-R {
+        0% {
+            transform: scale(1.4, 2) translateY(40%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+    }
+
+}

@@ -1,0 +1,132 @@
+[
+    {
+        "name": "STADIUM BRAVO",
+        "img": "STADIUMBRAVO.jpg",
+        "type": ["Standard", "Quick Match"]
+    },
+    {
+        "name": "STADIUM ALPHA",
+        "img": "STADIUMALPHA.jpg",
+        "type": ["Standard", "Quick Match", "Team Deathmatch"]
+    },
+    {
+        "name": "LAIR",
+        "img": "LAIR.jpg",
+        "type": ["Standard", "Quick Match", "Team Deathmatch", "Ranked"]
+    },
+    {
+        "name": "NIGHTHAVEN LABS",
+        "img": "NIGHTHAVENLABS.jpg",
+        "type": ["Standard", "Quick Match", "Team Deathmatch", "Ranked"]
+    },
+    {
+        "name": "CLOSE QUARTER",
+        "img": "CLOSEQUARTER.jpg",
+        "type": ["Team Deathmatch"]
+    },
+    {
+        "name": "EMERALD PLAINS",
+        "img": "EMERALDPLAINS.jpg",
+        "type": ["Standard", "Quick Match", "Ranked"]
+    },
+    {
+        "name": "BANK",
+        "img": "BANK.jpg",
+        "type": ["Standard", "Quick Match", "Ranked"]
+    },
+    {
+        "name": "BORDER",
+        "img": "BORDER.jpg",
+        "type": ["Standard", "Quick Match", "Team Deathmatch", "Ranked"]
+    },
+    {
+        "name": "CHALET",
+        "img": "CHALET.jpg",
+        "type": ["Standard", "Quick Match", "Ranked"]
+    },
+    {
+        "name": "CLUBHOUSE",
+        "img": "CLUBHOUSE.jpg",
+        "type": ["Standard", "Quick Match", "Team Deathmatch", "Ranked"]
+    },
+    {
+        "name": "COASTLINE",
+        "img": "COASTLINE.jpg",
+        "type": ["Standard", "Quick Match", "Ranked"]
+    },
+    {
+        "name": "CONSULATE",
+        "img": "CONSULATE.jpg",
+        "type": ["Standard", "Quick Match", "Team Deathmatch", "Ranked"]
+    },
+    {
+        "name": "FAVELA",
+        "img": "FAVELA.jpg",
+        "type": ["Standard", "Quick Match"]
+    },
+    {
+        "name": "FORTRESS",
+        "img": "FORTRESS.jpg",
+        "type": ["Standard", "Quick Match"]
+    },
+    {
+        "name": "HEREFORD BASE",
+        "img": "HEREFORDBASE.jpg",
+        "type": ["Standard", "Quick Match"]
+    },
+    {
+        "name": "HOUSE",
+        "img": "HOUSE.jpg",
+        "type": ["Standard", "Quick Match"]
+    },
+    {
+        "name": "KAFE DOSTOYEVSKY",
+        "img": "KAFEDOSTOYEVSKY.jpg",
+        "type": ["Standard", "Quick Match", "Ranked"]
+    },
+    {
+        "name": "KANAL",
+        "img": "KANAL.jpg",
+        "type": ["Standard", "Quick Match", "Ranked"]
+    },
+    {
+        "name": "OREGON",
+        "img": "OREGON.jpg",
+        "type": ["Standard", "Quick Match", "Ranked"]
+    },
+    {
+        "name": "OUTBACK",
+        "img": "OUTBACK.jpg",
+        "type": ["Standard", "Quick Match", "Ranked"]
+    },
+    {
+        "name": "PRESIDENTIAL PLANE",
+        "img": "PRESIDENTIALPLANE.jpg",
+        "type": ["Standard", "Quick Match"]
+    },
+    {
+        "name": "SKYSCRAPER",
+        "img": "SKYSCRAPER.jpg",
+        "type": ["Standard", "Quick Match", "Team Deathmatch", "Ranked"]
+    },
+    {
+        "name": "THEME PARK",
+        "img": "THEMEPARK.jpg",
+        "type": ["Standard", "Quick Match", "Team Deathmatch", "Ranked"]
+    },
+    {
+        "name": "TOWER",
+        "img": "TOWER.jpg",
+        "type": ["Standard", "Quick Match"]
+    },
+    {
+        "name": "VILLA",
+        "img": "VILLA.jpg",
+        "type": ["Standard", "Quick Match", "Team Deathmatch", "Ranked"]
+    },
+    {
+        "name": "YACHT",
+        "img": "YACHT.jpg",
+        "type": ["Standard", "Quick Match"]
+    }
+]
