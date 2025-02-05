@@ -31,7 +31,7 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
           }, index * 100);
         }, 100);
       });
-      startTimer(5);
+      startTimer(15);
     }, 3500);
   }, []);
 
