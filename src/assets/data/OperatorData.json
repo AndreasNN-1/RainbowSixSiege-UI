@@ -3782,7 +3782,7 @@
     "side": "DEFENDER",
     "squad": "NIGHTHAVEN",
     "elite": [""],
-    "BioImg": "",
+    "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6S1qFckDJGp8NyVztOpbCE/86eaaab66472038666289cc2aefe3949/r6-operator-wamai_358316.png",
     "specialty": {
       "type": ["ANTI-GADGET", "TRAPPER"],
       "HEALTH": 2,

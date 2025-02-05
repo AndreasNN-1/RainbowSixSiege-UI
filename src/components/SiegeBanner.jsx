@@ -60,10 +60,17 @@ const SiegeBanner = ({ time, timerdone, timerId }) => {
     }, [currentTime]);
 
     const formatTime = (seconds) => {
-        const minutes = Math.floor(seconds / 60);
-        const remainingSeconds = seconds % 60 - 1;
+        const minutes = Math.floor(seconds / 60); 
+        let remainingSeconds = seconds % 60;
+        if (minutes === 0) {
+            remainingSeconds = remainingSeconds - 1;
+        }
+    
+        remainingSeconds = Math.max(remainingSeconds, 0);
+    
         return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
     };
+    
 
     return (
         <div id="banner">

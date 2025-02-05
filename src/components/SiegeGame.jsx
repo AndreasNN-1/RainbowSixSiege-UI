@@ -20,16 +20,8 @@ const SiegeGame = () => {
     useEffect(() => {
         setTimeout(() => {
             setbanner(true);
-            if (phase === 2) {
-                setMapBanPhase(true);
-            } else {
-                setMapBanPhase(false);
-            }
-            if (phase === 1) {
-                setOppBanPhase(true);
-            } else {
-                setOppBanPhase(false);
-            }
+            {phase === 2 ? setMapBanPhase(true) :  setMapBanPhase(false)}
+            {phase === 1 ? setOppBanPhase(true) :  setOppBanPhase(false)}
         }, 1000);
     }, [phase])
 

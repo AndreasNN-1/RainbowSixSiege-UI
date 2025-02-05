@@ -14,14 +14,14 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
   });
 
   const [bans, setBans] = useState({
-    BannedOpps: [null, "Buck", "Rook", "Doc"],
+    BannedOpps: [null, null, null, null],
     BannedBanner: [false, false, false, false],
     BannedScreen: [false, false, ""],
   });
 
   const [banPhase, setBanPhase] = useState({
     over: false,
-    time: 1000,
+    time: 15,
   });
 
   const BannedOppsBanner = [
@@ -49,18 +49,71 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
 
   useEffect(() => {
     if (timerDone === true) {
+      if (banRound.teamSide === false) {
+        setBans((prevBans) => {
+          const filteredData = oppData.filter((theStuff) =>
+            banRound.round < 2
+              ? theStuff.side === "ATTACKER"
+              : theStuff.side === "DEFENDER"
+          );
+
+          console.log("Filtered Operators:", filteredData);
+
+          if (filteredData.length === 0) return prevBans;
+
+          const availableOpps = filteredData.filter(
+            (opp) => !prevBans.BannedOpps.includes(opp.name)
+          );
+
+          if (availableOpps.length === 0) {
+            console.log("No available operators left to ban.");
+            return prevBans;
+          }
+
+          const randomOpp =
+            availableOpps[Math.floor(Math.random() * availableOpps.length)]
+              .name;
+          console.log("Selected Random Operator:", randomOpp);
+
+          if (
+            banRound.round < 0 ||
+            banRound.round >= prevBans.BannedOpps.length
+          ) {
+            console.error("Invalid banRound index:", banRound.round);
+            return prevBans;
+          }
+
+          const updatedBans = [...prevBans.BannedOpps];
+          updatedBans[banRound.round] = randomOpp;
+
+          console.log("Updated Bans:", updatedBans);
+          return { ...prevBans, BannedOpps: updatedBans };
+        });
+      } else {
+        setBans((prevBans) => {
+          if (prevBans.BannedOpps[banRound.round] === null) {
+            console.log("Setting no ban for index:", banRound.round);
+            const updatedBans = [...prevBans.BannedOpps];
+            updatedBans[banRound.round] = "noban";
+            return { ...prevBans, BannedOpps: updatedBans };
+          }
+          return prevBans;
+        });
+      }
+
       setBanRound({
         ...banRound,
         overlay: false,
       });
-      setBans({
-        ...bans,
+      setBans((prevBans) => ({
+        ...prevBans,
         BannedScreen: [
           true,
-          bans.BannedScreen[1],
-          bans.BannedOpps[banRound.round],
+          prevBans.BannedScreen[1],
+          prevBans.BannedOpps[banRound.round],
         ],
-      });
+      }));
+
       setTimeout(() => {
         setBans((prevBans) => {
           const updatedBannedBanner = [...prevBans.BannedBanner];
@@ -159,22 +212,27 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
                   }}
                 ></div>
                 {bans.BannedBanner[index] ? (
-                  <div className="banicon-con">
-                    <img
-                      className="oppbanIcon"
-                      src={
-                        oppData.find(
-                          (operator) => operator.name === bans.BannedOpps[index]
-                        )?.icon
-                      }
-                      alt="img"
-                    />
-                    <img
-                      className="banIcon"
-                      src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
-                      alt="banned"
-                    />
-                  </div>
+                  bans.BannedOpps[index] !== "noban" ? (
+                    <div className="banicon-con">
+                      <img
+                        className="oppbanIcon"
+                        src={
+                          bans.BannedOpps[index] === "noban"
+                            ? ""
+                            : oppData.find(
+                                (operator) =>
+                                  operator.name === bans.BannedOpps[index]
+                              )?.icon
+                        }
+                        alt="img"
+                      />
+                      <img
+                        className="banIcon"
+                        src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                        alt="banned"
+                      />
+                    </div>
+                  ) : null
                 ) : null}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
                   <path fill="#24262a" d={ban.svgPath} />
@@ -207,35 +265,68 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
                       name: "",
                     };
 
+                    const isBanned = bans.BannedOpps.slice(
+                      0,
+                      banRound.round
+                    ).includes(theStuff.name);
+
                     return (
-                      <div className="Aopp" key={index}>
+                      <div
+                        className={`Aopp ${isBanned ? "banned" : ""}`}
+                        key={index}
+                      >
                         {theStuff.icon ? (
                           <div
                             className="oppbox"
-                            onMouseEnter={() => SetpickedOpp(theStuff)}
-                            onClick={() =>
-                              setBans((prevBans) => {
-                                console.log("Previous Bans:", prevBans);
-                                console.log("Clicked Operator:", theStuff.name);
-                                if (prevBans.BannedOpps[1] === theStuff.name)
-                                  return prevBans;
+                            {...(!isBanned && {
+                              onMouseEnter: () => SetpickedOpp(theStuff),
+                            })}
+                            {...(!isBanned && {
+                              onClick: () =>
+                                setBans((prevBans) => {
+                                  console.log("Previous Bans:", prevBans);
+                                  console.log(
+                                    "Clicked Operator:",
+                                    theStuff.name
+                                  );
 
-                                const updatedBans = {
-                                  ...prevBans,
-                                  BannedOpps: prevBans.BannedOpps.map(
-                                    (opp, i) =>
-                                      i === banRound.round ? theStuff.name : opp
-                                  ),
-                                };
+                                  if (
+                                    prevBans.BannedOpps.includes(theStuff.name)
+                                  )
+                                    return prevBans;
 
-                                console.log("Updated Bans:", updatedBans);
-                                return updatedBans;
-                              })
-                            }
+                                  const updatedBans = {
+                                    ...prevBans,
+                                    BannedOpps: prevBans.BannedOpps.map(
+                                      (opp, i) =>
+                                        i === banRound.round
+                                          ? theStuff.name
+                                          : opp
+                                    ),
+                                  };
+
+                                  console.log("Updated Bans:", updatedBans);
+                                  return updatedBans;
+                                }),
+                            })}
                           >
                             {bans.BannedOpps[banRound.round] ===
-                            theStuff.name ? (
-                              <div className="clicked">1</div>
+                              theStuff.name || isBanned ? (
+                              <div
+                                className={`clicked ${
+                                  isBanned ? "banned" : ""
+                                }`}
+                              >
+                                {isBanned ? (
+                                  <img
+                                    className="banned-icon"
+                                    src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                                    alt="banned"
+                                  />
+                                ) : (
+                                  1
+                                )}
+                              </div>
                             ) : null}
 
                             <img
@@ -250,7 +341,51 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
                     );
                   })}
                 </div>
+                <div className="nobanbox">
+                  <div
+                    className="noban"
+                    onClick={() =>
+                      setBans((prevBans) => {
+                        console.log("Previous Bans:", prevBans);
+
+                        const updatedBans = {
+                          ...prevBans,
+                          BannedOpps: prevBans.BannedOpps.map((opp, i) =>
+                            i === banRound.round ? "noban" : opp
+                          ),
+                        };
+
+                        console.log("Updated Bans:", updatedBans);
+                        return updatedBans;
+                      })
+                    }
+                  >
+                    <p className="nobantext">NO BAN</p>
+                    {bans.BannedOpps[banRound.round] === "noban" ? (
+                      <div className="nobanpick">
+                        <img
+                          className="nobanpick-icon"
+                          src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                          alt="banned"
+                        />
+                      </div>
+                    ) : null}
+                  </div>
+                  <div className="baninfo">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 128 128"
+                    >
+                      <path d="M 64 6 C 32 6 6 32 6 64 C 6 96 32 122 64 122 C 96 122 122 96 122 64 C 122 32 96 6 64 6 z M 64 12 C 92.7 12 116 35.3 116 64 C 116 92.7 92.7 116 64 116 C 35.3 116 12 92.7 12 64 C 12 35.3 35.3 12 64 12 z M 64 38 C 62.3 38 61 39.3 61 41 L 61 46 C 61 47.7 62.3 49 64 49 C 65.7 49 67 47.7 67 46 L 67 41 C 67 39.3 65.7 38 64 38 z M 64 58 C 62.3 58 61 59.3 61 61 L 61 87 C 61 88.7 62.3 90 64 90 C 65.7 90 67 88.7 67 87 L 67 61 C 67 59.3 65.7 58 64 58 z" />
+                    </svg>
+                    <p className="baninfotext">
+                      Banned Operators will remain unavailable for both teams
+                      during the entire match.
+                    </p>
+                  </div>
+                </div>
               </div>
+
               <div className="oppinfo">
                 {pickedOpp ? (
                   <>
@@ -379,9 +514,7 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
                       </div>
                     </div>
                   </>
-                ) : (
-                  <p>Hover over an opponent to see details</p>
-                )}
+                ) : null}
               </div>
             </div>
           ) : (
@@ -397,13 +530,14 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
           <div className={`showBan ${bans.BannedScreen[1] ? "blue" : "red"}`}>
             <img src="Untitled-1.jpg" alt="back" />
             <div className="thcon">
-              <div className="showBanbroder-left"></div>
               <div className="infobox">
                 <img
                   src={
-                    oppData.find(
-                      (operator) => operator.name === bans.BannedScreen[2]
-                    )?.BioImg
+                    bans.BannedOpps[banRound.round] === "noban"
+                      ? "noban.png"
+                      : oppData.find(
+                          (operator) => operator.name === bans.BannedScreen[2]
+                        )?.BioImg
                   }
                   alt={bans.BannedScreen[2]}
                 />
@@ -415,6 +549,7 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
                   <h1>{bans.BannedScreen[2]}</h1>
                 </div>
               </div>
+              <div className="showBanbroder-left"></div>
               <div className="showBanbroder-right"></div>
             </div>
           </div>
@@ -424,6 +559,52 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
             <div className="broder-left"></div>
             <div className="broder-right"></div>
             <div className="fog"></div>
+            <div className="allopps">
+              {bans.BannedOpps.map((opp, index) => (
+                <div key={index} className="opreater">
+                  <img
+                    className="opreater-img"
+                    src={
+                      opp === "noban"
+                        ? "noban.png"
+                        : oppData.find((operator) => operator.name === opp)
+                            ?.BioImg
+                    }
+                    alt={opp}
+                  />
+                  <div className="oppbannerinfo">
+                    <div
+                      className={`oppbbanner ${
+                        startTeam === false ? (index === 1 || index === 2 ? "blue" : "red") : (index === 1 || index === 2 ? "red" : "blue")
+                      } `}
+                    >
+                      <img
+                        className={`banIcon`}
+                        src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                        alt="banned"
+                      />
+                    </div>
+                    <div className="oppname">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          fill="#24262a"
+                          d={
+                            oppData.find((operator) => operator.name === opp)
+                              ?.side === "ATTACKER"
+                              ? BannedOppsBanner[1].svgPath
+                              : BannedOppsBanner[2].svgPath
+                          }
+                        />
+                      </svg>
+                      <p className="theoppname">{opp}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
