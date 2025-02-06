@@ -56,9 +56,8 @@ const SiegeGame = () => {
     return (
         <div className="SiegeGame">
             {banner && <SiegeBanner time={Timer} timerdone={timerCompleted} timerId={timerId} />}
-            {phase === 2 ? <SiegemapBan startTimer={startTimer} timerDone={timerDone} map={MapSet} /> : null}
-            {phase === 1 ? <SiegeOppBan startTimer={startTimer} timerDone={timerDone} oppsBans={OppBansSet} /> : null}
-            {oppBans && oppBans}
+            {phase === 1 ? <SiegemapBan startTimer={startTimer} timerDone={timerDone} map={MapSet} /> : null}
+            {phase === 2 ? <SiegeOppBan startTimer={startTimer} timerDone={timerDone} oppsBans={OppBansSet} /> : null}
         </div>
     )
 }
