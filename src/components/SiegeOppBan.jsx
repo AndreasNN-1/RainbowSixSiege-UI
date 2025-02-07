@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import "./SiegeOppBan.scss";
 import data from "../assets/data/OperatorData.json";
 
-const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
+const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
   const [oppData, SetoppData] = useState(data);
   const [pickedOpp, SetpickedOpp] = useState(null);
-  const [startTeam, setStartTeam] = useState(Math.random() < 0.5);
+  const [startTeam, setStartTeam] = useState(!side);
   const [randomOpp, setRandomOpp] = useState(null);
   const [displaybanopp, setDisplaybanopp] = useState([]);
   const [banRound, setBanRound] = useState({
@@ -144,19 +144,16 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
           setBanPhase({
             showresolts: true,
           });
+          setBanRound({
+            ...banRound,
+            round: null,
+            active: false,
+          });
           setTimeout(() => {
-            setBanRound({
-              ...banRound,
-              round: null,
-              active: false,
-            });
             setBanPhase({
               showresolts: true,
               over: true,
             });
-            setTimeout(() => {
-              oppsBans(bans.BannedOpps);
-            }, 1000);
           }, 4000);
         }
       }, 3000);
@@ -175,6 +172,13 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
       }
     }
   }, [timerDone]);
+
+  useEffect(() => {
+    if(banPhase.over)  {
+      console.log(bans.BannedOpps);
+      oppsBans(bans.BannedOpps);
+    }
+  }, [banPhase.over]);
 
   useEffect(() => {
     if (banRound.active === true) {
@@ -321,12 +325,6 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
                             {...(!isBanned && {
                               onClick: () =>
                                 setBans((prevBans) => {
-                                  console.log("Previous Bans:", prevBans);
-                                  console.log(
-                                    "Clicked Operator:",
-                                    theStuff.name
-                                  );
-
                                   if (
                                     prevBans.BannedOpps.includes(theStuff.name)
                                   )
@@ -341,8 +339,6 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
                                           : opp
                                     ),
                                   };
-
-                                  console.log("Updated Bans:", updatedBans);
                                   return updatedBans;
                                 }),
                             })}
@@ -383,16 +379,12 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
                     className="noban"
                     onClick={() =>
                       setBans((prevBans) => {
-                        console.log("Previous Bans:", prevBans);
-
                         const updatedBans = {
                           ...prevBans,
                           BannedOpps: prevBans.BannedOpps.map((opp, i) =>
                             i === banRound.round ? "noban" : opp
                           ),
                         };
-
-                        console.log("Updated Bans:", updatedBans);
                         return updatedBans;
                       })
                     }
@@ -667,7 +659,7 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
               <div className="showBanbroder-fog"></div>
               <div className="baninfobox">
                 <img
-                className="operatorbanned"
+                  className="operatorbanned"
                   src={
                     bans.BannedOpps[banRound.round] === "noban"
                       ? "noban.png"
@@ -684,13 +676,18 @@ const SiegeOppBan = ({ startTimer, timerDone, oppsBans }) => {
                     </span>
                     BANNED
                   </h2>
-                  <h1>{bans.BannedScreen[2] === "noban"? "NO BAN" : bans.BannedScreen[2]}</h1>
+                  <h1>
+                    {bans.BannedScreen[2] === "noban"
+                      ? "NO BAN"
+                      : bans.BannedScreen[2]}
+                  </h1>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
                     <path
                       fill="#24262a"
                       d={
-                        oppData.find((operator) => operator.name === bans.BannedScreen[2])
-                          ?.side === "ATTACKER"
+                        oppData.find(
+                          (operator) => operator.name === bans.BannedScreen[2]
+                        )?.side === "ATTACKER"
                           ? BannedOppsBanner[1].svgPath
                           : BannedOppsBanner[2].svgPath
                       }

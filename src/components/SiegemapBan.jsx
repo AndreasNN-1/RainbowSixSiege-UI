@@ -9,7 +9,7 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
   const [visibleIndexes, setVisibleIndexes] = useState([]);
   const [mapClicked, setMapClicked] = useState(null);
   const [mapsBanned, setmapsBanned] = useState([]);
-  const [actionMap, setActionMap] = useState([]);
+  const [actionMap, setActionMap] = useState(null);
   const [mapPicked, setMapPicked] = useState(false);
   const [timerdone, setTimerDone] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -37,19 +37,21 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
 
   useEffect(() => {
     if (timerDone === true) {
-      console.log("timerDone in SiegemapBan");
       setTimerDone(timerDone);
       if (timerDone) {
         setmapsBanned((prev) => {
+          let validMapClicked = mapClicked !== null ? mapClicked : 5;
           let newBannedMaps = [
-            mapClicked || 5,
+            validMapClicked,
             Math.floor(Math.random() * maps.length),
           ];
           while (newBannedMaps[0] === newBannedMaps[1]) {
             newBannedMaps[1] = Math.floor(Math.random() * maps.length);
           }
+
           return newBannedMaps;
         });
+
         setTimeout(() => {
           setshowresults(true);
           setTimeout(() => {
@@ -94,16 +96,18 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
 
       const randomIndex =
         filteredIndexes[Math.floor(Math.random() * filteredIndexes.length)];
+
       setActionMap(randomIndex);
+      const TheMap = maps[randomIndex]?.name;
       setMapPicked(true);
       setTimeout(() => {
         setshowresults(false);
         setTimeout(() => {
           setFadeOut(true);
           setTimeout(() => {
-            map(mapPicked);
+            map(TheMap);
           }, 1000);
-        }, 6000);
+        }, 3000);
       }, 2500);
     }, 2000);
 
