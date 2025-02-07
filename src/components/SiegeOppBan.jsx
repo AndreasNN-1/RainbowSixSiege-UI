@@ -175,7 +175,6 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
 
   useEffect(() => {
     if(banPhase.over)  {
-      console.log(bans.BannedOpps);
       oppsBans(bans.BannedOpps);
     }
   }, [banPhase.over]);
