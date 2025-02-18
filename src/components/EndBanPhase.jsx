@@ -3,7 +3,15 @@ import "./EndBanPhase.scss"
 
 const EndBanPhase = ({ map, side, done }) => {
 
-    useEffect(()=> {
+    useEffect(() => {
+        const audio = new Audio("audio/game.wav");
+        audio.volume = 0.2;
+        if (!audio.paused) {
+            audio.currentTime = 0;
+            audio.play();
+        } else {
+            audio.play();
+        }
         setTimeout(() => {
             done();
         }, 4000);

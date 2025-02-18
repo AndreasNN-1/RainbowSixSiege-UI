@@ -1,5 +1,179 @@
 [
   {
+    "name": "Striker",
+    "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/17NnCKm86wr8XUEajrYiOz/c971adfefc7e0910a99b3da91a2573e8/r6s-operators-list-striker.png",
+    "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2ZC6qMkmnam9bLc1fZJJ0C/fd0719a5b03789e65aa7f41e7c2dc49c/r6s-operators-badge-striker.png",
+    "side": "ATTACKER",
+    "squad": "",
+    "elite": [
+      ""
+    ],
+    "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4efdFybEQIMHeYByKJ5yPB/98ac1b2c27da72694b525b4424aab613/r6s-operator-striker.png",
+    "specialty": {
+      "type": [
+        "SUPPORT"
+      ],
+      "HEALTH": 2,
+      "SPEED": 2,
+      "DIFFICULTY": 1
+    },
+    "loadout": {
+      "PRIMARY": {
+        "M4": {
+          "name": "M4",
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3jhi90ycmuc8mAiuSXFoCi/bcf354459e7becd6ede52ee97917c832/M4.png",
+          "type": "ASSAULT RIFLE"
+        },
+        "M249 SAW": {
+          "name": "M249 SAW",
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3p0oG7GsLIoHaRullf7xsF/e2a9e135af63e8897355023cd34538c4/M249_SAW.png",
+          "type": "LIGHT MACHINE GUN"
+        }
+      },
+      "SECONDARY": {
+        "5.7 USG": {
+          "name": "MK1 9MM",
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/tkYcSAJSe5yGkeUhzZqBO/e81feb86df4a7eb6951052bec26b6ed7/5.7_USG.png",
+          "type": "HANDGUN"
+        },
+        "ITA12S": {
+          "name": "ITA12S",
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5G4DroaSdqHzJWCe7qqbHZ/5dd2e03f853182c78a1e7fcbc642f0cf/ITA12S.png",
+          "type": "SHOTGUN"
+        }
+      },
+      "GADGET": {
+        "BREACH CHARGE": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1OgTMhyF1FBsSAo4njk26m/99b7a971f81b9195b3c3536b51d52893/R6S_Breach_charge.png"
+        },
+        "CLAYMORE": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4T4H5EJgUxorucGVtU2pkm/74fef324b89c220ce6426e8097f915b9/Claymore.png"
+        },
+        "FRAG GRENADE": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4GZsPHbm9H0k5EWz7TMkwO/33b9007bc6ee03dab15cfa15eb69e096/Frag_Grenade.png"
+        },
+        "IMPACT GRENADE": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7iJK9B1Vr3PDO3rGftU00l/3a02e940b440c30929edf22c49870f65/impact-grenade__1_.png"
+        },
+        "HARD BREACH CHARGE": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3OvnVPWY1UyrDE913kU0a1/eae4b2a1584234ea2ff4ad6481239f3b/SecondaryBreacher.png"
+        },
+        "SMOKE GRENADE": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3LaxoSLC49T5vgKnUAlTLT/c47c4636845a04478432c48be8c29aee/Smoke_Grenade.png"
+        },
+        "STUN GRENADE": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3XnK8s1iQJQu5cfr6UyQfK/429480b96d6d6d6b830c32c75d2608f5/Stun_Grenade.png"
+        }
+      },
+      "ABILITY": {
+        "": {
+          "img": ""
+        }
+      }
+    },
+    "extra": {
+      "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3aDGN53JpPMyNp0SYYdURH/9e93376f59f5e6ee3cbdb7cb2770255d/R6S_NewBlood_OperatorGameplay_YT_striker.jpg",
+      "text": "Striker is the Attacker Operator with access to all secondary gadgets for Attack Operators. They have access to the M4 and the M249 as primary weapons, and the 5.7 USG and ITA 12S as secondary weapons.",
+      "video": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1qHhDdej2rqKoazlTyHJvn/6e15f2f1492596f26bf04b1f136d3d88/R6S_NewBlood_OperatorGameplay_YT__striker.mp4"
+    },
+    "biography": {
+      "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5b2wegQkQwACmAmFZYruwu/e69e15aa9f7a390d78857048b2e3ebe7/R6S-operator-image-bio-y9s2.jpg",
+      "real name": "Undefined",
+      "date of birth": "Undefined",
+      "place of birth": "Undefined",
+      "video": "",
+      "biography": "We earned the right to be here. Now we just have to earn the right to stay” Rainbow’s Attack Recruits, known as Strikers, are a cornerstone of the institution and despite internal perception, are not a generic monolith of identical soldiers. Generally speaking, they are much more youthful than our experienced Specialists and Operators, but that doesn’t make them any less integral to the smooth running of our missions. Furthermore, there are worse things than being overly enthusiastic, even if occasionally there will be some Recruits who get a little too excitable around our elite Specialists. Despite the confidential nature of Rainbow’s missions, some Recruits have been known to treat our Ops like near-celebrities, coming up with their own theories about who did what in various missions and pressing them for details and stories. Due to this and other concerns from Specialists, the Recruits now have their own mess hall and generally only interact with the Ops directly involved in their training. Though all of these Recruits hail from the most elite of elite military and counter-terror institutions, they all know that Rainbow is a cut above and treat the organization with the respect and discipline it demands. Although not full-fledged Operators, many Recruits have gone through trials by fire, like the survivors of Deimos’ attack on Tower. They performed valiantly, collaborating effectively with Vigil to down the helicopter that led the attack and took so many young lives. While this event was tragic, it was also a true test of field composure, leading one such survivor, Ram, to become a Specialist.",
+      "psychological report": "As I’m running Rainbow’s Attack Recruit training, I’d be the most useful to weigh in here. I’ve got them mastering vertical breaching, flanking maneuvers, and drone use. While Recruits arrive from all sorts of CTUs, military, or other enforcement units, bringing a ton of solid experience, it’s important we still put ‘em through a bit of a wringer. Once they’ve moved beyond training, Recruits are the frontline in any ground, air or naval assault. While some of our more hardened and jaded Specialists may dismiss them as mere cannon fodder, a successful Recruit will create the windows of time that allow Rainbow’s Specialists to run a successful mission. I know I’ve counted on them more than once in my tenure. Rainbow’s Specialists are the best of the best, and the bottom line is that most Attack Recruits won’t make the cut. Those that do, however, could find a home on numerous Squads. Thanks to their single-minded focus on completing mission objectives, Ghosteyes and Redhammer are the most logical spots, but no two Recruits are the same, so predictions like this can often prove futile. I’m more focused on getting them in fighting shape, anyhow. -- Specialist Sam “Zero” Fisher, Attack Recruit Training Lead"
+    }
+  },
+  {
+    "name": "Sentry",
+    "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1gOsEc5wt8VRtjEupN4TEL/9e8a27ecb654702bae1b07bf124126b1/r6s-operators-list-sentry.png",
+    "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3RhB8rT969t71r0b3iiiQo/3bf85d17ade85b4e5943712b664b6166/r6s-operators-badge-sentry.png",
+    "side": "DEFENDER",
+    "squad": "",
+    "elite": [
+      ""
+    ],
+    "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4D6K0a93Nwh0vXbuudP1tE/02310bdbd60ede48be879721d7ba248e/r6s-operator-sentry.png",
+    "specialty": {
+      "type": [
+        "SUPPORT"
+      ],
+      "HEALTH": 2,
+      "SPEED": 2,
+      "DIFFICULTY": 1
+    },
+    "loadout": {
+      "PRIMARY": {
+        "COMMANDO 9": {
+          "name": "COMMANDO 9",
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4P9dpUph5w3MSsLNnW6be/04baba24990fcb75a9c0bcfd01b7d190/Commando_9.png",
+          "type": "ASSAULT RIFLE"
+        },
+        "M870": {
+          "name": "M870",
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2rkU6g4Rlg0e0U4rczWGTV/a51589a54c43f476d8eb984c0ea881e9/M870.png",
+          "type": "SHOTGUN"
+        }
+      },
+      "SECONDARY": {
+        "C75 AUTO": {
+          "name": "C75 AUTO",
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3wUuefwPjU705mZkTdJ9UH/8ccb11884cfa34c176ac5500af139177/C75_Auto.png",
+          "type": "MACHINE PISTOL"
+        },
+        "SUPER SHORTY": {
+          "name": "SUPER SHORTY",
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7Dq8LDmIxAveRqXM17orUW/8169927dba6976cee92cc53c7b0960aa/r6-operator-weapon-sa-supershorty.png",
+          "type": "SHOTGUN"
+        }
+      },
+      "GADGET": {
+        "BARBED WIRE": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7igaibxuCcSpWDkZensEJS/6d30514b70a4c8b535bb1c113f9cfce0/barbed-wire__1_.png"
+        },
+        "BULLETPROOF CAMERA": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/gZuOXvuTu2i8hQX0B6auy/259f379a6283bae618443d722a896f1a/Bulletproof_camera.png"
+        },
+        "DEPLOYABLE SHIELD": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/W0WE0X2VQlxwWIAFCJ6Jm/523650a39de5a23dd9520d7299c9e25a/Deployable_Shield.png"
+        },
+        "OBSERVATION BLOCKER": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5toUEasFf4nw1vID6N8fpC/70f43a9ef7e83bbff5aaa9cdfab46c3c/r6s-observationblocker-gadget_v1.png"
+        },
+        "IMPACT GRENADE": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7iJK9B1Vr3PDO3rGftU00l/3a02e940b440c30929edf22c49870f65/impact-grenade__1_.png"
+        },
+        "NITRO CELL": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4pBSTw9U6l9GRnT12G6Xln/e0991bc03b48d217f510af8b611c8828/Nitro_Cell.png"
+        },
+        "PROXIMITY ALARM": {
+          "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2TsFLmb2O6LRZpbxzkZDck/c9146913388a9567500b704c95600621/Proximity_alarm.png"
+        }
+      },
+      "ABILITY": {
+        "": {
+          "img": ""
+        }
+      }
+    },
+    "extra": {
+      "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/24eJxFqij3LRlhsOzgodfu/eecf2c0e08e17644a6bea082363b8bef/R6S_NewBlood_OperatorGameplay_YT_sentry.jpg",
+      "text": "Sentry is the Defender Operator with access to all secondary gadgets for Defense Operators. They have access to the Commando 9 and the M870 as primary weapons, and the C75 Auto and Super Shorty as secondary weapons.",
+      "video": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3qdrnNw6nknMPKkTdtLaVc/cd253d2b4514e06fa03d6e43c67c8cdd/R6S_NewBlood_OperatorGameplay_YT_sentry.mp4"
+    },
+    "biography": {
+      "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/Qsu6XhIe0ScoAPry6OsLC/6d4a44809ffcd70566e17ae231032b47/R6S-operator-image-bio-y9s2.jpg",
+      "real name": "Undefined",
+      "date of birth": "Undefined",
+      "place of birth": "Undefined",
+      "video": "",
+      "biography": "“We eat, sleep and dream Rainbow during training. And one day, it’ll pay off.” The current crop of Defense Recruits, also known as Sentries, in Rainbow are undergoing a revamped training regimen and finding their place in an organization that needs their drive, adaptability and resilience. Besides adding bodies to larger-scale defensive missions, Recruits are the foundation of Rainbow. Their ranks may seem faceless and nameless at times, but that won’t last forever, as the organization will often promote from within, drawing a Recruit up into being a Specialist. While they are made up of a varied group with many personalities, backgrounds, heights, weights, languages and skillsets, there are some commonalities between the Defense Recruits. To succeed in the program, one must exhibit patience, attention-to-detail and a deft ability to communicate clearly and succinctly both prior to and during a mission.",
+      "psychological report": "Since the training of the Defense Recruits fell under my purview I created a new series of training modules, specifically designed for the threats Rainbow currently faces in the field. It is imperative that a Recruit masters these training modules before heading into a hot mission. After Emerald Plains and our long journey to capturing Deimos, we ideally need our Recruits to be on an equal footing with the Keres Elite, who are quite clearly receiving expert and well-funded field training. I can only hope that with Deimos under our roof, that edge will dull. While our experienced Specialists will have their unique gadgets and abilities to help ensure their success, a Recruit given the opportunity to join a mission must showcase a mastery of a variety of weapons. They are not the scalpel; they are the Swiss Army Knife, which is why they bring additional utility into the field to support Specialists. No matter what some of our more opinionated Operators may say, these Defense Recruits are not all the same; they come from a variety of military and police backgrounds and have distinct goals they are pursuing within the organization. What Defense Recruits all share, however, is a keen focus on hostage protection, and a will to do whatever it takes to complete the mission objective. Do not mistake them for shrinking violets though. With my training, they are learning to be just as aggressive as the Attack Recruits when the situation warrants it. -- Elena Maria “Mira” Alvarez, Defense Recruit Training Lead"
+    }
+  },
+  {
     "name": "Sledge",
     "img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6eIdbZWLBIdtCygNAu9uue/8856e29f0e9ebc3b6ed996223586ebce/r6-operators-list-sledge.png",
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4lgK1mOTVAoBhoj5qjYuyd/83c83d56e977f96ac0e9621c0d1c07d2/Y0R6_BADGE_Sledge_L.png",
@@ -10,7 +184,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2p5MyJkqbsfL8kCRNJVhcz/90aa196a11f2ea49ea107aab69789053/R6-operator-sledge.png",
     "specialty": {
-      "type": ["BREACH", "ANTI-GADGET"],
+      "type": [
+        "BREACH",
+        "ANTI-GADGET"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -78,7 +255,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4yGZXsXNG7gxH0YIwnii6F/e895af50867dc913f192050c10913abd/R6-operator-thatcher.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "SUPPORT"],
+      "type": [
+        "ANTI-GADGET",
+        "SUPPORT"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -148,7 +328,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5NUuXBKokP1KmAGR8Q7fqE/9628143388fc1c2f50162c1ccdf94942/R6-operator-smoke.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "TRAPPER"],
+      "type": [
+        "ANTI-ENTRY",
+        "TRAPPER"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -218,7 +401,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3gItFrDP0bBZsDXPdPp8ni/4314eb876028a87ae7fb20cc3215d3f6/R6-operator-mute.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "CROWD CONTROL"],
+      "type": [
+        "ANTI-GADGET",
+        "CROWD CONTROL"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -289,7 +475,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4uyWdmCF6zI9vcn4vKp9zx/1b9393a63e1071daeccb95732e530d40/r6-operator-ash_229846.png",
     "specialty": {
-      "type": ["BREACH", "FRONT LINE"],
+      "type": [
+        "BREACH",
+        "FRONT LINE"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 2
@@ -359,7 +548,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/569euf91mHD0ZceUnO5tVl/d2c58485cf44e51c130373fe8007f4d0/R6-operator-castle.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "SUPPORT"],
+      "type": [
+        "ANTI-ENTRY",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -431,7 +623,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3eOrdhZhYBqcFJdD0ygcGI/ba8ce2069fd409480fc74b8a5dbf8afd/R6-operator-pulse.png",
     "specialty": {
-      "type": ["INTEL", "SUPPORT"],
+      "type": [
+        "INTEL",
+        "SUPPORT"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 3
@@ -504,7 +699,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4c4cEUFWUwXTT4p3V5wAjm/e755c2a37a050de118eabc667c55c511/R6-operator-thermite.png",
     "specialty": {
-      "type": ["BREACH", "SUPPORT"],
+      "type": [
+        "BREACH",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -574,7 +772,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5jaeo9LkOu6deQz4mOF9a2/9a07011ac08bc25d58cbfc828b442e3a/R6-operator-twitch.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "INTEL"],
+      "type": [
+        "ANTI-GADGET",
+        "INTEL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -649,7 +850,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/37v1tD14BQ9A59vqXO7I9p/ba1d199bf7697f5ede61b93cdec60686/R6-operator-montagne.png",
     "specialty": {
-      "type": ["INTEL", "SUPPORT"],
+      "type": [
+        "INTEL",
+        "SUPPORT"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 3
@@ -717,7 +921,9 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7cZ1TDHehPRrgv6uJ2GIoy/d6feddd3fc1a0769a8ad56afa658e572/R6-operator-doc.png",
     "specialty": {
-      "type": ["SUPPORT"],
+      "type": [
+        "SUPPORT"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -797,7 +1003,9 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/17CNRjTOFVKS1Q8Zou4ZVD/663dae86e2902f210bf2b1504904dbd0/R6-operator-rook.png",
     "specialty": {
-      "type": ["SUPPORT"],
+      "type": [
+        "SUPPORT"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -875,7 +1083,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1xYMcXH9CNiKHI5Wqoxw8y/ac8414157d7647ea8377dd5c7ce6d2bb/R6-operator-glaz.png",
     "specialty": {
-      "type": ["INTEL", "SUPPORT"],
+      "type": [
+        "INTEL",
+        "SUPPORT"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 2
@@ -948,7 +1159,9 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/pzeHydBjAc16X63nQH6Sm/33adb500a2abe9fbcaf368fa601ef59b/R6-operator-fuze.png",
     "specialty": {
-      "type": ["ANTI-GADGET"],
+      "type": [
+        "ANTI-GADGET"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -1026,7 +1239,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4DCZD6bED0srAvUDbciDgO/f7b915b1d07854638973fbc23aa0ad9b/R6-operator-kapkan.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "TRAPPER"],
+      "type": [
+        "ANTI-ENTRY",
+        "TRAPPER"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -1096,7 +1312,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3anG5CUIzp0MWB9T6tIpy9/bd81ae97ecd984afe84813384eb027d8/r6s-operator-tachanka.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "CROWD CONTROL"],
+      "type": [
+        "ANTI-ENTRY",
+        "CROWD CONTROL"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -1174,7 +1393,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/18FXPSsVVIDvyKvMi4cmnO/bac05dd81df9a8f48336babdc5030cff/R6-operator-jager.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "SUPPORT"],
+      "type": [
+        "ANTI-GADGET",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -1239,7 +1461,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7uF3w5MYCFA1zikIkECPi9/f03570fd8c7739361619726638561c7a/R6-operator-bandit.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "ANTI-GADGET"],
+      "type": [
+        "ANTI-ENTRY",
+        "ANTI-GADGET"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 1
@@ -1304,7 +1529,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/MlN3NUzTAYwPkFughKR23/19b3155bf7d69c7415cafa36f52f67e7/R6-operator-blitz.png",
     "specialty": {
-      "type": ["FRONT LINE", "MAP CONTROL"],
+      "type": [
+        "FRONT LINE",
+        "MAP CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 3
@@ -1364,7 +1592,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2bdUfjHxFfSn9YzMjlUThL/d1b3519228790ba30785eebab03bbc38/R6-operator-iq.png",
     "specialty": {
-      "type": ["INTEL", "SUPPORT"],
+      "type": [
+        "INTEL",
+        "SUPPORT"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 3
@@ -1434,7 +1665,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3YDi0a5YWFRwNzMoAjZstI/f2ebc37bde447faa664bcf160c63042d/R6-operator-buck.png",
     "specialty": {
-      "type": ["BREACH", "SUPPORT"],
+      "type": [
+        "BREACH",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -1504,7 +1738,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4IrcYxDo6aVBQyxDOFirQE/852e6c6c0e8a46303469921efae3d6dc/R6-operator-frost.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "TRAPPER"],
+      "type": [
+        "ANTI-ENTRY",
+        "TRAPPER"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -1574,7 +1811,9 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1FtCiVm4q4DsQNsLoT5nV0/2028bded87ef2fe2b255332f4245c525/R6-operator-blackbeard.png",
     "specialty": {
-      "type": ["SUPPORT"],
+      "type": [
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -1642,7 +1881,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5q1yIrIxoddG5pds2Nq3mz/7dc46a59bbfb6959296d01469916f44c/R6-operator-valkyrie.png",
     "specialty": {
-      "type": ["INTEL", "SUPPORT"],
+      "type": [
+        "INTEL",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -1707,7 +1949,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5OxEmlChYi0U3d4URLaC4C/e348f7b3b77d2d8dec65ec6afbe171f9/R6-operator-capitao.png",
     "specialty": {
-      "type": ["FRONT LINE", "MAP CONTROL"],
+      "type": [
+        "FRONT LINE",
+        "MAP CONTROL"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 2
@@ -1777,7 +2022,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3BfIIo48RsMmkntTXU54g5/93826b4340e2fda49d959054b15151c0/R6-operator-caveira.png",
     "specialty": {
-      "type": ["INTEL", "CROWD CONTROL"],
+      "type": [
+        "INTEL",
+        "CROWD CONTROL"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 3
@@ -1845,7 +2093,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4a3bXHSd7wz9vRZzRC8Kzq/98dac79c29394be7f5ff4d363fce5140/R6-operator-hibana.png",
     "specialty": {
-      "type": ["BREACH", "FRONT LINE"],
+      "type": [
+        "BREACH",
+        "FRONT LINE"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 1
@@ -1916,7 +2167,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2dZawp2HB63pTV3Zwgro6L/8278d19b2e9ae6b1f4ef45784a217c89/R6-operator-echo.png",
     "specialty": {
-      "type": ["INTEL", "CROWD CONTROL"],
+      "type": [
+        "INTEL",
+        "CROWD CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 3
@@ -1986,7 +2240,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2YoFmkuQL4r8odEWB7K60w/b5fd30cf9c7f407753bd921dfe6a1d28/R6-operator-jackal.png",
     "specialty": {
-      "type": ["INTEL", "MAP CONTROL"],
+      "type": [
+        "INTEL",
+        "MAP CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 3
@@ -2061,7 +2318,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6wZplm8r956WXGrSYlULTU/0f9c0a33abfd42d9102723886850b8ca/R6-operator-mira.png",
     "specialty": {
-      "type": ["INTEL", "SUPPORT"],
+      "type": [
+        "INTEL",
+        "SUPPORT"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 3
@@ -2131,7 +2391,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4Oyf6w5rI0u9j4zMcWBSGz/ef22bcaca06cba29fdfa41e5ec921f7d/R6-operator-ying.png",
     "specialty": {
-      "type": ["FRONT LINE", "MAP CONTROL"],
+      "type": [
+        "FRONT LINE",
+        "MAP CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -2196,7 +2459,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3R9iXCdt0dpYqg6LqFojua/ba70e0f2616df82a2f89ecf2d72b4ae0/R6-operator-lesion.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "TRAPPER"],
+      "type": [
+        "ANTI-ENTRY",
+        "TRAPPER"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -2267,7 +2533,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5KUunQgJWx9sVC0hFhHVAt/8fdff15ca50227328fb0589ecd8ccda0/R6-operator-zofia.png",
     "specialty": {
-      "type": ["BREACH", "ANTI-GADGET"],
+      "type": [
+        "BREACH",
+        "ANTI-GADGET"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -2332,7 +2601,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3cpkHAvjm3RLhEoTqs090m/35a7595eb2f2431213656d66da8a9af8/R6-operator-ela.png",
     "specialty": {
-      "type": ["CROWD CONTROL", "TRAPPER"],
+      "type": [
+        "CROWD CONTROL",
+        "TRAPPER"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -2400,7 +2672,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2s5BCj0po76sK50EyDeNH5/63779ec1228021893847b361865956d1/R6-operator-dokkaebi.png",
     "specialty": {
-      "type": ["INTEL", "MAP CONTROL"],
+      "type": [
+        "INTEL",
+        "MAP CONTROL"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 2
@@ -2478,7 +2753,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/bPE2opWKKK0BPVx6I1H4b/4e15d30820900ecd0794ef90e1361d5a/R6-operator-vigil.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "CROWD CONTROL"],
+      "type": [
+        "ANTI-GADGET",
+        "CROWD CONTROL"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 3
@@ -2548,7 +2826,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/O1pBwXRND1RV2WN5OrEr7/787e4d31e1b74ae9700ffac675205de3/R6-operator-lion.png",
     "specialty": {
-      "type": ["INTEL", "MAP CONTROL"],
+      "type": [
+        "INTEL",
+        "MAP CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -2631,7 +2912,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1ihKzLryOLc5JNkejAdUh2/1b7a9f866afdc07b86a604a681f23b1b/R6-operator-finka.png",
     "specialty": {
-      "type": ["FRONT LINE", "SUPPORT"],
+      "type": [
+        "FRONT LINE",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -2707,10 +2991,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/XK43imgD0tc0xrk0tgTCQ/0402cc95cbd525debafa1aab0fdd8385/Y3S2_BADGE_Maestro_L.png",
     "side": "DEFENDER",
     "squad": "VIPERSTRIKE",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5DSFt6OEgGRcIOjC8YmdEV/e858ba7e2b695d4d792b84f2fcd95c3a/R6-operator-maestro.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "INTEL"],
+      "type": [
+        "ANTI-GADGET",
+        "INTEL"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 2
@@ -2783,7 +3072,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7ufK1h05Bv9FA19SpIACoJ/b3017cfc3836340861a11fc3fe82bef2/R6-operator-alibi.png",
     "specialty": {
-      "type": ["INTEL", "TRAPPER"],
+      "type": [
+        "INTEL",
+        "TRAPPER"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 3
@@ -2853,7 +3145,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5JkQYq5w8jibdznsDl2yvy/3ec75ea42f9a54238f569797a3e185a6/r6-operator-maverick.png",
     "specialty": {
-      "type": ["BREACH", "FRONT LINE"],
+      "type": [
+        "BREACH",
+        "FRONT LINE"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 2
@@ -2913,10 +3208,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7G4lGl5HPLFTTUdcZW8UOK/3901b44cf2a9423486ffd78531e42f87/Y3S3_BADGE_Clash_L.png",
     "side": "DEFENDER",
     "squad": "WOLFGUARD",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/snhm8UctuxdKTEcvnWi2K/17e5c888c0407d74a658eefbf91e60b6/R6-operator-clash.png",
     "specialty": {
-      "type": ["INTEL", "CROWD CONTROL"],
+      "type": [
+        "INTEL",
+        "CROWD CONTROL"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 3
@@ -2986,7 +3286,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1Fue2SumRQEs8Geb2CpWsX/913fbcda744ab9dc719a1440047e4585/R6-operator-nomad.png",
     "specialty": {
-      "type": ["FRONT LINE", "MAP CONTROL"],
+      "type": [
+        "FRONT LINE",
+        "MAP CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 3
@@ -3056,7 +3359,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4WdfMUlABk6Pr9FjV3kV4x/42ffacc4a2cd75ff9539dcb00e1e28ee/R6-operator-kaid.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "ANTI-GADGET"],
+      "type": [
+        "ANTI-ENTRY",
+        "ANTI-GADGET"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 2
@@ -3124,10 +3430,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5LIyheUROsdMDkX6o0zh6R/f201ce65af771459c374ef71c89827b4/Y4S1_BADGE_Gridlock_LL.png",
     "side": "ATTACKER",
     "squad": "REDHAMMER",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/221q2yd28L3IAkjUGEFCke/51f431695fe53b30f7b384141b5e63ee/R6-operator-gridlock.png",
     "specialty": {
-      "type": ["SUPPORT", "MAP CONTROL"],
+      "type": [
+        "SUPPORT",
+        "MAP CONTROL"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -3200,7 +3511,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/22Gyn0Z317IfLRGwHPBlmL/1e9e9f041403e8846824337cb53600b8/r6-operator-mozzie_343388.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "INTEL"],
+      "type": [
+        "ANTI-GADGET",
+        "INTEL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -3265,7 +3579,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5X4tMHTglYiy22CYHvvn6b/74f36f4695c6f1eb79533be5e9f97002/R6-operator-nokk.png",
     "specialty": {
-      "type": ["FRONT LINE", "MAP CONTROL"],
+      "type": [
+        "FRONT LINE",
+        "MAP CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 3
@@ -3338,7 +3655,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6IeUn3ejRrjAngxPvqqsZh/234847c2a25cbdd2cf783ef15caf9738/R6-operator-warden.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "INTEL"],
+      "type": [
+        "ANTI-GADGET",
+        "INTEL"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 2
@@ -3406,10 +3726,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2K1uxROLvHGxOIOMpNRFeU/7b4afc5ded3d1b9a937d1b504b5d4d0d/Y4S3_BADGE_Amaru_L.png",
     "side": "ATTACKER",
     "squad": "REDHAMMER",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1w0TmOriiVzmeIBYodZ6wK/81da7f64732b1dbf5ccf984f2aea1d94/R6-operator-amaru.png",
     "specialty": {
-      "type": ["FRONT LINE", "MAP CONTROL"],
+      "type": [
+        "FRONT LINE",
+        "MAP CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -3479,10 +3804,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6AAY4FZt5piHdabOdDokE4/f7f8bd90c20b8a429c78a08684b75aca/Y4S3_BADGE_Goyo_L.png",
     "side": "DEFENDER",
     "squad": "REDHAMMER",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3Hz6j8A8mmpN0zsxoQWXgC/1d29dff2a852f5fe25c5c4640dfe2d12/R6-operator-goyo.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "TRAPPER"],
+      "type": [
+        "ANTI-ENTRY",
+        "TRAPPER"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -3550,7 +3880,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4xh8dBfzXNSwQIOaw660Xb/6df56a74ea8534be1d15f61e49aa1e24/r6-operator-kali_358315.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "SUPPORT"],
+      "type": [
+        "ANTI-GADGET",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -3615,10 +3948,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1vQZ4WsAjhc6M7qNOS4ahQ/92fc4d89632fb87aec0f102d7adbfe26/Y4S4_BADGE_Wamai_L.png",
     "side": "DEFENDER",
     "squad": "NIGHTHAVEN",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6S1qFckDJGp8NyVztOpbCE/86eaaab66472038666289cc2aefe3949/r6-operator-wamai_358316.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "TRAPPER"],
+      "type": [
+        "ANTI-GADGET",
+        "TRAPPER"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -3688,7 +4026,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6Fiy7YExswMn1Cf13GUU9t/7bb697bf32c0d79c2852b354e3045fff/r6s-operator-iana.png",
     "specialty": {
-      "type": ["FRONT LINE", "INTEL"],
+      "type": [
+        "FRONT LINE",
+        "INTEL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -3753,10 +4094,14 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7mLA8GY9ZKlUfDXrfo9Nek/e3dfd0759414f36866a8c80b61a67722/Y5S1_BADGE_Oryx_L.png",
     "side": "DEFENDER",
     "squad": "REDHAMMER",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3Ha2aY7zJrudEskszfFA3K/2f5d898ca145d4dd73d8ec4ece53b195/r6s-operator-oryx.png",
     "specialty": {
-      "type": ["SUPPORT"],
+      "type": [
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -3826,7 +4171,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3VknamIo6E87ELFbLqk1dx/a54751fe2435104ed35b5e6ee660ef72/r6s-operator-ace.png",
     "specialty": {
-      "type": ["BREACH", "ANTI-GADGET"],
+      "type": [
+        "BREACH",
+        "ANTI-GADGET"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -3891,7 +4239,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7xlDG41BwglAg68IGGhvf3/73cd220cd35d5e58dc30f0f3f551b923/r6s-operator-melusi.png",
     "specialty": {
-      "type": ["INTEL", "CROWD CONTROL"],
+      "type": [
+        "INTEL",
+        "CROWD CONTROL"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 1
@@ -3956,7 +4307,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7lou5sF83pEwxoQaRr7qgP/3bc2e32393f5e98389c1b5e98d005894/r6s-operator-zero.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "INTEL"],
+      "type": [
+        "ANTI-GADGET",
+        "INTEL"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 2
@@ -4021,10 +4375,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5rOLCYQOh5HH0Nv6NHe38H/29681f901ff71ae5decb5ccb1b9f8a29/Y5S4_BADGE_Aruni_L.png",
     "side": "DEFENDER",
     "squad": "NIGHTHAVEN",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/xIH5tc98YOO1Juf1cRcJC/779f61650fac17e6e79e7b0f618c83e5/r6s-operator-aruni.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "ANTI-GADGET"],
+      "type": [
+        "ANTI-ENTRY",
+        "ANTI-GADGET"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 2
@@ -4089,7 +4448,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4lZEmYIYYUloCcSarIJfiK/f8cbc4701200b414e6efe0d599ac8106/r6s-operator-flores.png",
     "specialty": {
-      "type": ["ANTI-GADGET", "INTEL"],
+      "type": [
+        "ANTI-GADGET",
+        "INTEL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -4154,7 +4516,9 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2braENz5x4Ko9UZ03LsBfY/7fd1647e138fa8db8f2fac2be2867693/r6s-operator-thunderbird.png",
     "specialty": {
-      "type": ["SUPPORT"],
+      "type": [
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -4219,10 +4583,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5tt27EFHYjiDLo2qbYEgXG/2f1acbb8209e45b136ca7b0e2e5eb1f9/r6s-operators-badge-osa.png",
     "side": "ATTACKER",
     "squad": "NIGHTHAVEN",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5IYWNxvwiiwPDxAWsZVmVS/1e62cb6bcd4a7fa1608ed152a5fbb9b4/r6s-operator-osa.png",
     "specialty": {
-      "type": ["INTEL", "SUPPORT"],
+      "type": [
+        "INTEL",
+        "SUPPORT"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 2
@@ -4290,7 +4659,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3erk7Ub0asfBDZEKsdL8j9/5019698958b0834e806d01cd7bf36286/r6s-operator-thorn.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "TRAPPER"],
+      "type": [
+        "ANTI-ENTRY",
+        "TRAPPER"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 1
@@ -4360,7 +4732,10 @@
     ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6vzacvORn7fh5sWFqy4glF/daadcbb2e0515129bf0cb610eccb3393/r6s-operator-azami.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "SUPPORT"],
+      "type": [
+        "ANTI-ENTRY",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 3
@@ -4420,10 +4795,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7pqZFaPgQwaLi1pFKuAv7e/d3d9af214737fe6a069e5346c50bfd20/r6s-operators-badge-sens.png",
     "side": "ATTACKER",
     "squad": "WOLFGUARD",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5jnAuLrtadxfg1XOieDnL0/4694dde0c71e3e9998a1e5fd6cb1a7d2/r6s-operator-sens.png",
     "specialty": {
-      "type": ["SUPPORT", "MAP CONTROL"],
+      "type": [
+        "SUPPORT",
+        "MAP CONTROL"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 2
@@ -4488,10 +4868,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5VoAYPvRZXIwjcwTD3PWaZ/b9748f007c0c116ca1bcd77b0f91e766/r6s-operators-badge-grim.png",
     "side": "ATTACKER",
     "squad": "NIGHTHAVEN",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2Mh6QhvaGrU16dvqAlDq6M/65d751edc5d985badc95db15b0784f54/r6s-operator-grim.png",
     "specialty": {
-      "type": ["FRONT LINE", "MAP CONTROL"],
+      "type": [
+        "FRONT LINE",
+        "MAP CONTROL"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 1
@@ -4559,10 +4944,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6YOBUP5JMskklFx9nDJQ49/d9d4b0968f581597feaa0ef4ec0891f3/r6s-operators-badge-solis.png",
     "side": "DEFENDER",
     "squad": "GHOSTEYES",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1OfBCr46se4TbYO1ff5Ral/3f4e4e9ed19672f8e49e9b608c5b8f6b/r6s-operator-solis.png",
     "specialty": {
-      "type": ["INTEL", "SUPPORT"],
+      "type": [
+        "INTEL",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 3
@@ -4622,10 +5012,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1JTzualMKZVGfdROg4XKh8/7989454e62b7972bfd88f09097cc148f/r6s-operators-badge-brava.png",
     "side": "ATTACKER",
     "squad": "VIPERSTRIKE",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7uyRvknQBEbg6KY37rXeK2/699fd5226e65c7b3ad5205dcf54360f4/r6s-operator-brava.png",
     "specialty": {
-      "type": ["INTEL", "ANTI-GADGET"],
+      "type": [
+        "INTEL",
+        "ANTI-GADGET"
+      ],
       "HEALTH": 1,
       "SPEED": 3,
       "DIFFICULTY": 3
@@ -4690,10 +5085,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4vtvBhY56S2slW3y0eKsMp/6a0f41807549ad1aa503112d4ad05a52/r6s-operators-badge-fenrir.png",
     "side": "DEFENDER",
     "squad": "REDHAMMER",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1rWrOkHjxowW37i5UJKcqt/a60e59c16a9b8a9583b9578853a6b15b/r6s-operator-fenrir.png",
     "specialty": {
-      "type": ["TRAPPER", "CROWD CONTROL"],
+      "type": [
+        "TRAPPER",
+        "CROWD CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 3
@@ -4758,10 +5158,14 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3YQiStwC1Qo4wKWmgK6XCH/ac8a0fea30f2996f96ca31b17a0039fa/r6s-operators-badge-ram.png",
     "side": "ATTACKER",
     "squad": "REDHAMMER",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/Fgszpez8AbRf23OkswHQl/32f5f4d2bb387941e474833ceb3ac2cb/r6s-operator-ram.png",
     "specialty": {
-      "type": ["BREACH"],
+      "type": [
+        "BREACH"
+      ],
       "HEALTH": 3,
       "SPEED": 1,
       "DIFFICULTY": 2
@@ -4826,10 +5230,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/43VtYmfmTtLwwKDGhalSCO/9673bb50e981ba2684cd649534f00de7/r6s-operators-badge-tubarao.png",
     "side": "DEFENDER",
     "squad": "WOLFGUARD",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6RHlZJniCer89285ocTyPY/103b3da47a3978f5b6fbbd77a02b53c9/r6s-operator-tubarao.png",
     "specialty": {
-      "type": ["ANTI-ENTRY", "ANTI-GADGET"],
+      "type": [
+        "ANTI-ENTRY",
+        "ANTI-GADGET"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -4889,10 +5298,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/18uYWtYnEjmMQBTTdkIfWF/2bb4305ef6b7826f1c8ae3ea88ef826a/r6s-operators-badge-deimos.png",
     "side": "ATTACKER",
     "squad": "",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "BioImg": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/30I7qa77OwH9EWPvcHYBbH/45c27a7d2d3df007b0138f2c6ab2b94a/r6s-operator-deimos.png",
     "specialty": {
-      "type": ["INTEL", "MAP CONTROL"],
+      "type": [
+        "INTEL",
+        "MAP CONTROL"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2
@@ -4955,10 +5369,15 @@
     "icon": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/k0AOat3ISkt7WMR6X4dJg/aa4596095d3861f7de24e007730e3f89/r6s-operators-badge-skopos.png",
     "side": "DEFENDER",
     "squad": "WOLFGUARD",
-    "elite": [""],
+    "elite": [
+      ""
+    ],
     "Bios Img": "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4efdFybEQIMHeYByKJ5yPB/98ac1b2c27da72694b525b4424aab613/r6s-operator-striker.png",
     "specialty": {
-      "type": ["INTEL", "SUPPORT"],
+      "type": [
+        "INTEL",
+        "SUPPORT"
+      ],
       "HEALTH": 2,
       "SPEED": 2,
       "DIFFICULTY": 2

@@ -355,6 +355,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                             className="oppbox"
                             onMouseEnter={() => {
                               if (!isBanned) {
+                                console.log(theStuff);
                                 SetpickedOpp(theStuff);
                                 playHoverAudio();
                               }
@@ -569,15 +570,22 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                           )}
                         </div>
                         <div className="opp-GADGET-box">
-                          {Object.entries(pickedOpp.loadout.GADGET).map(
-                            ([key, GADGET], index) => (
-                              <div key={index} className="opp-set">
-                                <p>GADGET</p>
-                                <h5>{key}</h5>
-                                <img src={GADGET.img} alt={key} />
-                              </div>
+                          {pickedOpp.name === "Striker" || pickedOpp.name === "Sentry" ?
+                            <div className="opp-set">
+                              <h5 className="alttest">you can view all gadgets in the operator page</h5>
+                            </div>
+                            :
+                            Object.entries(pickedOpp.loadout.GADGET).map(
+                              ([key, GADGET], index) => (
+                                <div key={index} className="opp-set">
+                                  <p>GADGET</p>
+                                  <h5>{key}</h5>
+                                  <img src={GADGET.img} alt={key} />
+                                </div>
+                              )
                             )
-                          )}
+
+                          }
                         </div>
                       </div>
                     </div>

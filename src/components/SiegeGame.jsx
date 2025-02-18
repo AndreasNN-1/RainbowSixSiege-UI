@@ -13,7 +13,7 @@ const SiegeGame = () => {
   const [phase, setPhase] = useState(0);
   const [phasEnder, setPhasEnder] = useState(false);
   const [Bans, setOppBans] = useState([]);
-  const [map, setMap] = useState("EMERALDPLAINS");
+  const [map, setMap] = useState(null);
   const [side, setSide] = useState(Math.random() < 0.5);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
@@ -140,15 +140,21 @@ const SiegeGame = () => {
       {phase === 4 ? (
         <EndBanPhase
           side={side}
-          map={map}
+          map={map ? map.replace(/\s+/g, "") : ""}
           done={startscrenndone}
         />
       ) : null}
       {phase === 5 ? (
-        <div className="mapandbans">
-          <p>map: {map}</p>
+        <div className="done">
+          <h6>Done for now, have a good day</h6>
+          <div className="btns">
+            <button onClick={() => window.location.reload()}>Refresh Page</button>
+            <button onClick={() => (window.location.href = "/")}>Go to Main Page</button>
+          </div>
+
+          <p>Map: {map}</p>
           <div>
-            bans:
+            Bans:
             <ul>
               {Bans.map((aban, index) => (
                 <li key={index}>{aban}</li>
@@ -156,6 +162,7 @@ const SiegeGame = () => {
             </ul>
           </div>
         </div>
+
       ) : null}
     </div>
   );

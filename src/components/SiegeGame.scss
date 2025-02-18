@@ -21,6 +21,7 @@
         align-items: center;
         flex-direction: column;
         gap: 1vw;
+
         .start-title {
             font-size: 5vw;
             line-height: 5vw;
@@ -50,6 +51,7 @@
 
             &:disabled {
                 cursor: default;
+
                 &:hover {
                     background-color: #8094a6;
                     transform: scale(1);
@@ -64,6 +66,45 @@
 
         p {
             text-align: center;
+        }
+    }
+
+    .done {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1vw;
+        h6 {
+            font-size: 2vw;
+        }
+
+        .btns {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            button {
+                width: 40%;
+                height: 3vw;
+                background-color: #8094a6;
+                font-size: 1.5vw;
+                line-height: 1vw;
+                letter-spacing: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-family: DINRundschriftBreitItalic2;
+                border: none;
+
+                &:hover {
+                    background-color: #309ad9;
+                    transform: scale(1.05);
+                }
+            }
         }
     }
 }
