@@ -38,6 +38,9 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
   useEffect(() => {
     if (timerDone === true) {
       setTimerDone(timerDone);
+      const mapsAudio = new Audio('audio/maps.wav');
+      mapsAudio.volume = 1;
+      mapsAudio.play();
       if (timerDone) {
         setmapsBanned((prev) => {
           let validMapClicked = mapClicked !== null ? mapClicked : 5;
@@ -52,12 +55,13 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
           return newBannedMaps;
         });
 
+
         setTimeout(() => {
           setshowresults(true);
           setTimeout(() => {
             setShowMaps(false);
             setpickerActive(true);
-          }, 1700);
+          }, 1000);
         }, 300);
       }
     }
@@ -67,7 +71,7 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
     if (mapsBanned.length > 0) {
       setTimeout(() => {
         PickaMap();
-      }, 2000);
+      }, 1000);
     }
   }, [PickerActive]);
 
@@ -94,19 +98,19 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
     setTimeout(() => {
       clearInterval(interval);
 
-      const randomIndex =
-        filteredIndexes[Math.floor(Math.random() * filteredIndexes.length)];
+      const randomIndex = filteredIndexes[Math.floor(Math.random() * filteredIndexes.length)];
 
       setActionMap(randomIndex);
       const TheMap = maps[randomIndex]?.name;
       setMapPicked(true);
+
       setTimeout(() => {
         setshowresults(false);
         setTimeout(() => {
           setFadeOut(true);
           setTimeout(() => {
             map(TheMap);
-          }, 1000);
+          }, 1500);
         }, 3000);
       }, 2500);
     }, 2000);
@@ -114,8 +118,27 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
     return () => clearInterval(interval);
   };
 
+
   const MapCheck = (index) => {
+    const clicked = new Audio('audio/click.wav');
+    if (!clicked.paused) {
+      clicked.currentTime = 0;
+      clicked.play();
+    } else {
+      clicked.play();
+    }
     setMapClicked(index);
+  };
+
+  const playHoverSound = () => {
+    const audio = new Audio("audio/hover.wav");
+    audio.volume = 0.2;
+    if (!audio.paused) {
+      audio.currentTime = 0;
+      audio.play();
+    } else {
+      audio.play();
+    }
   };
 
   return (
@@ -145,19 +168,18 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
               {maps.map((map, index) => (
                 <div
                   key={index}
-                  className={`map-item ${
-                    visibleIndexes.includes(index) ? "visible" : ""
-                  }`}
+                  className={`map-item ${visibleIndexes.includes(index) ? "visible" : ""
+                    }`}
                   onClick={!timerdone ? () => MapCheck(index) : null}
+                  onMouseEnter={playHoverSound}
                 >
                   <img src={`maps/${map.img}`} alt={map.name} />
                   <div className="map-item-text">
                     <p>{map.name}</p>
                   </div>
                   <div
-                    className={`mapPicks ${
-                      !timerdone && mapClicked === index ? "visible" : ""
-                    }`}
+                    className={`mapPicks ${!timerdone && mapClicked === index ? "visible" : ""
+                      }`}
                   >
                     1
                   </div>
@@ -167,12 +189,12 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
             <div
               className="noban"
               onClick={!timerdone ? () => MapCheck(5) : null}
+              onMouseEnter={playHoverSound}
             >
               <p>NO BAN</p>
               <div
-                className={`nobanPick ${
-                  !timerdone && mapClicked === 5 ? "visible" : ""
-                }`}
+                className={`nobanPick ${!timerdone && mapClicked === 5 ? "visible" : ""
+                  }`}
               >
                 1
               </div>
@@ -191,13 +213,12 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
                 {maps.map((map, index) => (
                   <div
                     key={index}
-                    className={`map ${activeIndex === index ? "toggle" : ""} ${
-                      mapPicked
-                        ? actionMap === index
-                          ? "selected"
-                          : "notSelected"
-                        : ""
-                    }`}
+                    className={`map ${activeIndex === index ? "toggle" : ""} ${mapPicked
+                      ? actionMap === index
+                        ? "selected"
+                        : "notSelected"
+                      : ""
+                      }`}
                   >
                     {mapsBanned.includes(index) && (
                       <div className="ban-banner">
@@ -208,13 +229,12 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
                             alt="banned"
                           />
                           {mapsBanned[0] === mapsBanned[1] &&
-                          mapsBanned[0] === index ? (
+                            mapsBanned[0] === index ? (
                             <div className="double-ban"></div>
                           ) : (
                             <div
-                              className={`single-ban ${
-                                mapsBanned[1] === index ? "opponent" : "allies"
-                              }`}
+                              className={`single-ban ${mapsBanned[1] === index ? "opponent" : "allies"
+                                }`}
                             ></div>
                           )}
                         </div>

@@ -5,7 +5,7 @@ const RankedStartbanner = ({ side, done }) => {
     useEffect(() => {
         setTimeout(() => {
             done();
-        }, 5000);
+        }, 6000);
     }, [])
     return (
         <div className="RankedStartbanner">

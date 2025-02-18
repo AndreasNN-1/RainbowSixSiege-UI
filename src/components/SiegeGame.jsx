@@ -14,17 +14,11 @@ const SiegeGame = () => {
   const [Bans, setOppBans] = useState([]);
   const [map, setMap] = useState(false);
   const [side, setSide] = useState(Math.random() < 0.5);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
 
   useEffect(() => {
-    if (phase === 0) {
-      console.log(
-        "%c[GAME] %cThe Game has started",
-        "color: green; font-weight: bold;",
-        "color: white;"
-      );
-      setPhase(1);
-    } else if (phasEnder === true) {
+    if (phasEnder === true) {
       console.log(
         "%c[GAME] %cEnd of Phase " + phase + " and starting phase: " + (phase + 1),
         "color: green; font-weight: bold;",
@@ -34,6 +28,16 @@ const SiegeGame = () => {
       setPhasEnder(false);
     }
   }, [phasEnder]);
+
+  const handleStartGame = () => {
+    setIsButtonDisabled(true);
+    const audio = new Audio('audio/matchstart.wav');
+    audio.play();
+
+    setTimeout(() => {
+      setPhase(1);
+    }, 5000);
+  };
 
   const timerCompleted = () => {
     setTimerDone(true);
@@ -80,20 +84,43 @@ const SiegeGame = () => {
 
   return (
     <div className="SiegeGame">
+
+      {phase === 0 ?
+        (<div id="start">
+          <h1 className="start-title">Rainbow six siege</h1>
+          <p>use PC and 16 : 9 for best experience</p>
+          <button
+            className="start-btn"
+            onClick={handleStartGame}
+            disabled={isButtonDisabled}
+          >
+            {isButtonDisabled ? "Starting!" : "Start Game"}
+          </button>
+
+          <p>Note: <br />
+            this is a private passion Project <br />
+            where i trying to copy and remake the game Rainbow Six siege <br />
+            specifically the start of a ranked match in the game
+          </p>
+        </div>)
+        : null
+      }
       {phase === 1 ?
         <RankedStartbanner
           side={side}
           done={startscrenndone}
         />
-        : null}
-      {phase > 1 ? (
+        : null
+      }
+      {phase >= 2 ? (
         <SiegeBanner
           side={side}
           time={Timer}
           timerdone={timerCompleted}
           timerId={timerId}
         />
-      ) : null}
+      ) : null
+      }
       {phase === 2 ? (
         <SiegemapBan
           startTimer={startTimer}

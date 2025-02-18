@@ -26,6 +26,14 @@ const SiegeBanner = ({ side, time, timerdone, timerId }) => {
     }
 
     if (currentTime <= 3 && currentTime > 0 && !timerComplete) {
+      const audio = new Audio("audio/timetick.wav");
+      audio.volume = 0.8;
+      if (!audio.paused) {
+        audio.currentTime = 0;
+        audio.play();
+      } else {
+        audio.play();
+      }
       setDanger2(true);
       setPulse(true);
       setTimeout(() => {

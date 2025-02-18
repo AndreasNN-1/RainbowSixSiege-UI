@@ -52,6 +52,19 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
 
   useEffect(() => {
     if (timerDone === true) {
+      let audio;
+      if (banRound.round === 3) {
+        audio = new Audio("audio/bans.wav");
+      } else {
+        audio = new Audio("audio/banned.wav");
+      }
+      audio.volume = 1;
+      if (!audio.paused) {
+        audio.currentTime = 0;
+        audio.play();
+      } else {
+        audio.play();
+      }
       if (banRound.teamSide === false) {
         setBans((prevBans) => {
           const filteredData = oppData.filter((theStuff) =>
@@ -156,7 +169,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
             });
           }, 4000);
         }
-      }, 3000);
+      }, 3500);
     } else {
       if (banRound.round === null) {
         setTimeout(() => {
@@ -174,7 +187,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
   }, [timerDone]);
 
   useEffect(() => {
-    if(banPhase.over)  {
+    if (banPhase.over) {
       oppsBans(bans.BannedOpps);
     }
   }, [banPhase.over]);
@@ -213,8 +226,31 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
     } else {
       setRandomOpp(null);
     }
-    return () => {};
+    return () => { };
   }, [banRound.overlay]);
+
+
+  const playHoverAudio = () => {
+    const audio = new Audio("audio/hover.wav");
+    audio.volume = 0.2;
+    if (!audio.paused) {
+      audio.currentTime = 0;
+      audio.play();
+    } else {
+      audio.play();
+    }
+  };
+
+  const playClickAudio = () => {
+    const audio = new Audio("audio/click.wav");
+    audio.volume = 1;
+    if (!audio.paused) {
+      audio.currentTime = 0;
+      audio.play();
+    } else {
+      audio.play();
+    }
+  };
 
   return (
     <div className="SiegeOppBans">
@@ -235,15 +271,14 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
             {BannedOppsBanner.map((ban, index) => (
               <div
                 key={ban.id}
-                className={`box ${
-                  index === 1 || index === 2
-                    ? !startTeam
-                      ? "blue"
-                      : "red"
-                    : startTeam
+                className={`box ${index === 1 || index === 2
+                  ? !startTeam
                     ? "blue"
                     : "red"
-                } ${banRound.round == index ? "active" : ""} `}
+                  : startTeam
+                    ? "blue"
+                    : "red"
+                  } ${banRound.round == index ? "active" : ""} `}
               >
                 <div
                   className="timer"
@@ -260,9 +295,9 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                           bans.BannedOpps[index] === "noban"
                             ? ""
                             : oppData.find(
-                                (operator) =>
-                                  operator.name === bans.BannedOpps[index]
-                              )?.icon
+                              (operator) =>
+                                operator.name === bans.BannedOpps[index]
+                            )?.icon
                         }
                         alt="img"
                       />
@@ -318,36 +353,37 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                         {theStuff.icon ? (
                           <div
                             className="oppbox"
-                            {...(!isBanned && {
-                              onMouseEnter: () => SetpickedOpp(theStuff),
-                            })}
-                            {...(!isBanned && {
-                              onClick: () =>
+                            onMouseEnter={() => {
+                              if (!isBanned) {
+                                SetpickedOpp(theStuff);
+                                playHoverAudio();
+                              }
+                            }}
+                            onClick={() => {
+                              if (!isBanned) {
                                 setBans((prevBans) => {
-                                  if (
-                                    prevBans.BannedOpps.includes(theStuff.name)
-                                  )
+                                  if (prevBans.BannedOpps.includes(theStuff.name)) {
                                     return prevBans;
+                                  }
 
                                   const updatedBans = {
                                     ...prevBans,
-                                    BannedOpps: prevBans.BannedOpps.map(
-                                      (opp, i) =>
-                                        i === banRound.round
-                                          ? theStuff.name
-                                          : opp
+                                    BannedOpps: prevBans.BannedOpps.map((opp, i) =>
+                                      i === banRound.round ? theStuff.name : opp
                                     ),
                                   };
                                   return updatedBans;
-                                }),
-                            })}
+                                });
+
+                                playClickAudio();
+                              }
+                            }}
                           >
                             {bans.BannedOpps[banRound.round] ===
                               theStuff.name || isBanned ? (
                               <div
-                                className={`clicked ${
-                                  isBanned ? "banned" : ""
-                                }`}
+                                className={`clicked ${isBanned ? "banned" : ""
+                                  }`}
                               >
                                 {isBanned ? (
                                   <img
@@ -450,11 +486,10 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                               {Array.from({ length: 3 }).map((_, index) => (
                                 <div
                                   key={index}
-                                  className={`dot ${
-                                    index < pickedOpp.specialty.HEALTH
-                                      ? "true"
-                                      : ""
-                                  }`}
+                                  className={`dot ${index < pickedOpp.specialty.HEALTH
+                                    ? "true"
+                                    : ""
+                                    }`}
                                 ></div>
                               ))}
                             </div>
@@ -465,11 +500,10 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                               {Array.from({ length: 3 }).map((_, index) => (
                                 <div
                                   key={index}
-                                  className={`dot ${
-                                    index < pickedOpp.specialty.SPEED
-                                      ? "true"
-                                      : ""
-                                  }`}
+                                  className={`dot ${index < pickedOpp.specialty.SPEED
+                                    ? "true"
+                                    : ""
+                                    }`}
                                 ></div>
                               ))}
                             </div>
@@ -480,11 +514,10 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                               {Array.from({ length: 3 }).map((_, index) => (
                                 <div
                                   key={index}
-                                  className={`dot ${
-                                    index < pickedOpp.specialty.DIFFICULTY
-                                      ? "true"
-                                      : ""
-                                  }`}
+                                  className={`dot ${index < pickedOpp.specialty.DIFFICULTY
+                                    ? "true"
+                                    : ""
+                                    }`}
                                 ></div>
                               ))}
                             </div>
@@ -574,22 +607,21 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                                 opp === "noban"
                                   ? "noban.png"
                                   : oppData.find(
-                                      (operator) => operator.name === opp
-                                    )?.BioImg
+                                    (operator) => operator.name === opp
+                                  )?.BioImg
                               }
                               alt={opp}
                             />
                             <div className="oppbannerinfo">
                               <div
-                                className={`oppbbanner ${
-                                  startTeam === false
-                                    ? index === 1 || index === 2
-                                      ? "blue"
-                                      : "red"
-                                    : index === 1 || index === 2
+                                className={`oppbbanner ${startTeam === false
+                                  ? index === 1 || index === 2
+                                    ? "blue"
+                                    : "red"
+                                  : index === 1 || index === 2
                                     ? "red"
                                     : "blue"
-                                }`}
+                                  }`}
                               >
                                 <img
                                   className="banIcon"
@@ -663,8 +695,8 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                     bans.BannedOpps[banRound.round] === "noban"
                       ? "noban.png"
                       : oppData.find(
-                          (operator) => operator.name === bans.BannedScreen[2]
-                        )?.BioImg
+                        (operator) => operator.name === bans.BannedScreen[2]
+                      )?.BioImg
                   }
                   alt={bans.BannedScreen[2]}
                 />
@@ -715,21 +747,20 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                         opp === "noban"
                           ? "noban.png"
                           : oppData.find((operator) => operator.name === opp)
-                              ?.BioImg
+                            ?.BioImg
                       }
                       alt={opp}
                     />
                     <div className="oppbannerinfo">
                       <div
-                        className={`oppbbanner ${
-                          startTeam === false
-                            ? index === 1 || index === 2
-                              ? "blue"
-                              : "red"
-                            : index === 1 || index === 2
+                        className={`oppbbanner ${startTeam === false
+                          ? index === 1 || index === 2
+                            ? "blue"
+                            : "red"
+                          : index === 1 || index === 2
                             ? "red"
                             : "blue"
-                        } `}
+                          } `}
                       >
                         <img
                           className={`banIcon`}
