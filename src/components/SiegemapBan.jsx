@@ -225,7 +225,7 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
                         <div className="banner">
                           <img
                             className="banIcon"
-                            src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                            src="images/0-8392_white-no-symbol-clip-art-at-clipart-library.png"
                             alt="banned"
                           />
                           {mapsBanned[0] === mapsBanned[1] &&
@@ -268,7 +268,7 @@ const SiegemapBan = ({ startTimer, timerDone, map }) => {
         )}
         {fadeOut && (
           <div className="fadeOut">
-            <img src="Untitled-1.jpg" alt="back" />
+            <img src="images/Untitled-1.jpg" alt="back" />
           </div>
         )}
       </div>

@@ -4,6 +4,7 @@ import SiegemapBan from "./SiegemapBan";
 import SiegeBanner from "./SiegeBanner";
 import SiegeOppBan from "./SiegeOppBan";
 import RankedStartbanner from "./RankedStartbanner";
+import EndBanPhase from "./endBanPhase";
 
 const SiegeGame = () => {
   const [Timer, setTimer] = useState(null);
@@ -12,7 +13,7 @@ const SiegeGame = () => {
   const [phase, setPhase] = useState(0);
   const [phasEnder, setPhasEnder] = useState(false);
   const [Bans, setOppBans] = useState([]);
-  const [map, setMap] = useState(false);
+  const [map, setMap] = useState("EMERALDPLAINS");
   const [side, setSide] = useState(Math.random() < 0.5);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
@@ -87,8 +88,8 @@ const SiegeGame = () => {
 
       {phase === 0 ?
         (<div id="start">
-          <h1 className="start-title">Rainbow six siege</h1>
-          <p>use PC and 16 : 9 for best experience</p>
+          <h6 className="start-title">Rainbow six siege</h6>
+          <p>for best experience use: <br />16 : 9 / full screen</p>
           <button
             className="start-btn"
             onClick={handleStartGame}
@@ -137,6 +138,13 @@ const SiegeGame = () => {
         />
       ) : null}
       {phase === 4 ? (
+        <EndBanPhase
+          side={side}
+          map={map}
+          done={startscrenndone}
+        />
+      ) : null}
+      {phase === 5 ? (
         <div className="mapandbans">
           <p>map: {map}</p>
           <div>

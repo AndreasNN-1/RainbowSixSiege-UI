@@ -303,7 +303,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                       />
                       <img
                         className="banIcon"
-                        src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                        src="images/0-8392_white-no-symbol-clip-art-at-clipart-library.png"
                         alt="banned"
                       />
                     </div>
@@ -319,7 +319,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
         {banRound.active ? (
           banRound.teamSide ? (
             <div className={`blueteam ${banRound.overlay ? "active" : ""} `}>
-              <img className="back" src="Untitled-1.jpg" alt="back" />
+              <img className="back" src="images/Untitled-1.jpg" alt="back" />
               <div className="blueteam-left"></div>
               <div className="blueteam-right"></div>
               <div className="blueteam-fog"></div>
@@ -388,7 +388,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                                 {isBanned ? (
                                   <img
                                     className="banned-icon"
-                                    src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                                    src="images/0-8392_white-no-symbol-clip-art-at-clipart-library.png"
                                     alt="banned"
                                   />
                                 ) : (
@@ -412,7 +412,10 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                 <div className="nobanbox">
                   <div
                     className="noban"
-                    onClick={() =>
+                    onMouseEnter={() => {
+                      playHoverAudio();
+                    }}
+                    onClick={() => {
                       setBans((prevBans) => {
                         const updatedBans = {
                           ...prevBans,
@@ -421,7 +424,9 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                           ),
                         };
                         return updatedBans;
-                      })
+                      });
+                      playClickAudio();
+                    }
                     }
                   >
                     <p className="nobantext">NO BAN</p>
@@ -429,7 +434,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                       <div className="nobanpick">
                         <img
                           className="nobanpick-icon"
-                          src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                          src="images/0-8392_white-no-symbol-clip-art-at-clipart-library.png"
                           alt="banned"
                         />
                       </div>
@@ -582,7 +587,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
             </div>
           ) : (
             <div className={`redteam ${banRound.overlay ? "active" : ""} `}>
-              <img className="back" src="Untitled-1.jpg" alt="back" />
+              <img className="back" src="images/Untitled-1.jpg" alt="back" />
               <div className="redteam-left"></div>
               <div className="redteam-right"></div>
               <div className="redteam-fog"></div>
@@ -605,7 +610,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                               className="opreater-img"
                               src={
                                 opp === "noban"
-                                  ? "noban.png"
+                                  ? "images/noban.png"
                                   : oppData.find(
                                     (operator) => operator.name === opp
                                   )?.BioImg
@@ -625,7 +630,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                               >
                                 <img
                                   className="banIcon"
-                                  src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                                  src="images/0-8392_white-no-symbol-clip-art-at-clipart-library.png"
                                   alt="banned"
                                 />
                               </div>
@@ -685,7 +690,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
         ) : null}
         {bans.BannedScreen[0] ? (
           <div className={`showBan ${bans.BannedScreen[1] ? "blue" : "red"}`}>
-            <img src="Untitled-1.jpg" alt="back" />
+            <img src="images/Untitled-1.jpg" alt="back" />
             <div className="thcon">
               <div className="showBanbroder-fog"></div>
               <div className="baninfobox">
@@ -693,7 +698,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                   className="operatorbanned"
                   src={
                     bans.BannedOpps[banRound.round] === "noban"
-                      ? "noban.png"
+                      ? "images/noban.png"
                       : oppData.find(
                         (operator) => operator.name === bans.BannedScreen[2]
                       )?.BioImg
@@ -733,7 +738,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
         ) : null}
         {banPhase.showresolts && (
           <div className="showallbans">
-            <img className="back" src="Untitled-1.jpg" alt="back" />
+            <img className="back" src="images/Untitled-1.jpg" alt="back" />
             <div className="broder-left"></div>
             <div className="broder-right"></div>
             <div className="fog"></div>
@@ -745,7 +750,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                       className="opreater-img"
                       src={
                         opp === "noban"
-                          ? "noban.png"
+                          ? "images/noban.png"
                           : oppData.find((operator) => operator.name === opp)
                             ?.BioImg
                       }
@@ -764,7 +769,7 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                       >
                         <img
                           className={`banIcon`}
-                          src="0-8392_white-no-symbol-clip-art-at-clipart-library.png"
+                          src="images/0-8392_white-no-symbol-clip-art-at-clipart-library.png"
                           alt="banned"
                         />
                       </div>
@@ -795,7 +800,6 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
           </div>
         )}
       </div>
-      {banPhase.over && <div className="endbanphase"></div>}
     </div>
   );
 };
