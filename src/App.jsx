@@ -1,35 +1,25 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Layout from "./layout/Layout";
-import PageNotFound from "./pages/PageNotFound";
-import Home from "./pages/Home";
-import LayoutAdmin from "./layout/admin/LayoutAdmin";
-import HomeAdmin from "./pages/admin/HomeAdmin";
-
-import "./App.css";
-
+import React, { useState } from "react";
+import SiegeGame from "./components/SiegeGame";
+import MainMenu from "./components/MainMenu";
+import WelcomeScreen from "./components/WelcomeScreen";
 function App() {
-  const router = createBrowserRouter([
-    {
-      element: <Layout />,
-      errorElement: <PageNotFound />,
-      children: [
-        { path: "/", element: <Home /> },
-      ],
-    },
-    {
-      element: <LayoutAdmin />,
-      errorElement: <PageNotFound />,
-      children: [
-        { path: "/admin", element: <HomeAdmin /> },
-      ],
-    },
-  ]);
+
+  // 0 = Welcome Screen
+  // 1 = main menu
+  // 2 = ranked game
+  const [state, setState] = useState(0);
+
+  const UpTheState = () => {
+    setState(state + 1);
+  }
 
   return (
     <>
-      <RouterProvider router={router} />
+      {state == 0 && <WelcomeScreen start={UpTheState} />}
+      {state == 1 && <MainMenu startGame={UpTheState} />}
+      {state == 2 && <SiegeGame />}
     </>
   );
-}
+};
 
 export default App;

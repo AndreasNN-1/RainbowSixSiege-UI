@@ -10,12 +10,11 @@ const SiegeGame = () => {
   const [Timer, setTimer] = useState(null);
   const [timerId, setTimerId] = useState(0);
   const [timerDone, setTimerDone] = useState(null);
-  const [phase, setPhase] = useState(0);
+  const [phase, setPhase] = useState(1);
   const [phasEnder, setPhasEnder] = useState(false);
   const [Bans, setOppBans] = useState([]);
   const [map, setMap] = useState(null);
   const [side, setSide] = useState(Math.random() < 0.5);
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
 
   useEffect(() => {
@@ -29,16 +28,6 @@ const SiegeGame = () => {
       setPhasEnder(false);
     }
   }, [phasEnder]);
-
-  const handleStartGame = () => {
-    setIsButtonDisabled(true);
-    const audio = new Audio('audio/matchstart.wav');
-    audio.play();
-
-    setTimeout(() => {
-      setPhase(1);
-    }, 5000);
-  };
 
   const timerCompleted = () => {
     setTimerDone(true);
@@ -85,27 +74,6 @@ const SiegeGame = () => {
 
   return (
     <div className="SiegeGame">
-
-      {phase === 0 ?
-        (<div id="start">
-          <h6 className="start-title">Rainbow six siege</h6>
-          <p>for best experience use: <br />16 : 9 / full screen</p>
-          <button
-            className="start-btn"
-            onClick={handleStartGame}
-            disabled={isButtonDisabled}
-          >
-            {isButtonDisabled ? "Starting!" : "Start Game"}
-          </button>
-
-          <p>Note: <br />
-            this is a private passion Project <br />
-            where i trying to copy and remake the game Rainbow Six siege <br />
-            specifically the start of a ranked match in the game
-          </p>
-        </div>)
-        : null
-      }
       {phase === 1 ?
         <RankedStartbanner
           side={side}

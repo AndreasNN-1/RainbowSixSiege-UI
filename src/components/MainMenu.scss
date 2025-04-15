@@ -1,0 +1,328 @@
+#MainMenu {
+    width: 100vw;
+    height: 100dvh;
+    position: relative;
+    z-index: 1;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        padding-left: 2.4vw;
+        height: 3.75vw;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        ul {
+            width: auto;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            height: 100%;
+            gap: 1vw;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                flex-direction: column;
+                cursor: pointer;
+                height: 100%;
+
+                span {
+                    width: 100%;
+                    padding: 0 1.2vw;
+                    height: calc(100% - 1vw);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: DINRundschriftBreit;
+                    font-size: 1.34vw;
+
+                    img {
+                        z-index: 1;
+                        position: relative;
+                        flex: 1;
+                        width: 90%;
+                        height: 90%;
+                        width: auto;
+                        object-fit: contain;
+                    }
+                }
+
+                .bar {
+                    width: 100%;
+                    height: 0.3vw;
+                    background-color: transparent;
+                }
+
+                &.active {
+                    .bar {
+                        background-color: #04fce4;
+                    }
+                }
+
+                &:hover {
+                    .bar {
+                        background-color: #04fce4;
+                    }
+                }
+            }
+        }
+
+        menu {
+            width: auto;
+            height: 100%;
+            padding: 0.6vw 0;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: row;
+            gap: 0.4vw;
+
+            .user {
+                width: auto;
+                height: 100%;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                flex-direction: row;
+                gap: 0.4vw;
+                cursor: pointer;
+
+                .profile,
+                .member,
+                .rank,
+                .level,
+                .team {
+                    width: auto;
+                    height: 100%;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .profileImg,
+                    .rankImg,
+                    .levelImg,
+                    .teamImg {
+                        height: 95%;
+                        width: 95%;
+                        position: relative;
+                        z-index: 1;
+                        object-fit: contain;
+                    }
+
+                    .profileImg {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .levelText {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -60%);
+                        font-family: DINRundschriftBreit;
+                        letter-spacing: 0.1vw;
+                        font-size: 1.4vw;
+                    }
+
+                    .memberImg {
+                        height: 85%;
+                        width: 85%;
+                        position: relative;
+                        z-index: 1;
+                        object-fit: contain;
+                    }
+                }
+
+                .team {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    gap: 0;
+                    height: 100%;
+
+                    .teamImg {
+                        height: 65%;
+                        width: 100%;
+                        position: relative;
+                        object-fit: contain;
+                        flex: 1;
+                    }
+
+                    .teamText {
+                        height: auto;
+                        font-family: DINRundschriftBreit;
+                        font-size: 1vw;
+                        letter-spacing: 0.1vw;
+                        line-height: 1vw;
+                    }
+                }
+            }
+
+            #monney {
+                width: auto;
+                min-width: 6.5vw;
+                height: 100%;
+                border-left: 1.6px solid rgba(128, 128, 128, 0.5);
+                margin-left: 0.2vw;
+                padding: 0 0.6vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                .Renown,
+                .Credits {
+                    width: 100%;
+                    height: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                    gap: 0.3vw;
+                    cursor: pointer;
+                    padding: 0 0.3vw;
+
+                    img {
+                        position: relative;
+                        width: auto;
+                        height: 80%;
+                        object-fit: contain;
+                        z-index: 1;
+                    }
+
+                    span {
+                        font-size: 1vw;
+                        line-height: 1vw;
+                        font-family: DINRundschriftBreit;
+                        color: var(--Renown-color);
+                    }
+                }
+
+                .Credits {
+                    span {
+                        color: var(--Credits-color);
+                    }
+                }
+            }
+
+            #settings {
+                width: 3.8vw;
+                height: 100%;
+                border-left: 1.6px solid rgba(128, 128, 128, 0.5);
+
+                img {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    #menuUI {
+        height: calc(100% - 3.75vw - 2dvh);
+        width: auto;
+        margin-left: 4.8dvh;
+        margin-bottom: 2dvh;
+        display: flex;
+        justify-content: end;
+        align-items: start;
+        flex-direction: column;
+        gap: 1dvh;
+
+        .play,
+        .odther {
+            display: flex;
+            max-width: calc(55dvh + 1dvh);
+            flex-wrap: wrap;
+            gap: 1dvh;
+            flex-direction: row;
+
+            .button-nem,
+            .button-op {
+                display: flex;
+                justify-content: start;
+                align-items: start;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+                width: 27.5dvh;
+                height: 6.1vw;
+                padding: 1.5dvh 2dvh;
+                font-size: 4dvh;
+                line-height: 4dvh;
+                background-color: rgba(180, 180, 180, 0.8);
+                border: none;
+                color: black;
+                font-family: DINRundschriftBreitItalic2;
+                cursor: pointer;
+                transition: transform ease 20ms;
+
+                p {
+                    font-size: 3dvh;
+                    line-height: 3dvh;
+                }
+
+                &:hover {
+                    transform: scale(1.2);
+                    background-color: #04fce4;
+                }
+            }
+
+            .button-op {
+                height: 4.5vw;
+            }
+        }
+
+        .button-pass,
+        .button-intfi,
+        .button-news {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            align-items: start;
+            padding: 0;
+            margin: 0;
+            width: calc(55dvh + 1dvh);
+            height: 23dvh;
+            padding: 1.5dvh 2dvh;
+            font-size: 4dvh;
+            line-height: 4dvh;
+            background-color: rgba(180, 180, 180, 0.8);
+            border: none;
+            color: black;
+            font-family: DINRundschriftBreitItalic2;
+            cursor: pointer;
+        }
+
+        .button-news {
+            height: 25dvh;
+        }
+
+        .button-intfi {
+            height: 6dvh;
+        }
+    }
+
+}
