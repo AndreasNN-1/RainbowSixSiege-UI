@@ -23,7 +23,7 @@ const WelcomeScreen = ({ start }) => {
         <div id="welcome">
             <img src="/images/7907369fa863844fc1ae432a9ca0e610.jpg" alt="gfdgfd" />
             <div className="conent">
-                <h1>RAINBOW SIX SIEGE</h1>
+                <h1>RAINBOW SIX SIEGE - UI TEST</h1>
                 <ImagePreloader operatorData={operatorData} extraImages={staticImages} onComplete={() => setIsLoaded(true)} />
                 <div className="options">
                     <p>going full screen gives a better experience</p>

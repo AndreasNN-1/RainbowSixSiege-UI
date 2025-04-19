@@ -1,141 +1,275 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import "./MainMenu.scss"
 
-const MainMenu = ({ startGame }) => {
+const MainMenu = ({ startAudio, startGame }) => {
+    const [seconds, setSeconds] = useState(0);
     const [page, setPage] = useState(0);
+    const [findMatch, setFindMatch] = useState(false);
+    const [matchFound, setMatchFound] = useState(false);
+
+    const matchTimeoutRef = useRef(null);
+    const startGameTimeoutRef = useRef(null);
+    const menuAudioRef = useRef(null);
+    const matchAudio = useRef(null);
+
     useEffect(() => {
+        if (!startAudio) return;
 
         const audio = new Audio("audio/mainmenu.wav");
-        audio.volume = 0.01;
-        if (!audio.paused) {
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            audio.play();
+        audio.volume = 0.02;
+        audio.loop = true;
+        menuAudioRef.current = audio;
+
+        const playAudio = () => {
+            audio.play().catch(err => {
+                console.warn("Autoplay blocked or failed:", err);
+            });
         }
 
-    }, [])
+        playAudio();
+
+
+        return () => {
+            audio.pause();
+            audio.currentTime = 0;
+        };
+    }, [startAudio]);
 
     const Startgame = () => {
-        const audio = new Audio('audio/matchstart.wav');
-        audio.play();
+        if (findMatch) {
+            setFindMatch(false);
+            clearTimeout(matchTimeoutRef.current);
+            clearTimeout(startGameTimeoutRef.current);
+            setMatchFound(false);
+            setSeconds(0);
 
-        setTimeout(() => {
-            startGame()
-        }, 5000)
-    }
+            if (matchAudio.current) {
+                matchAudio.current.pause();
+                matchAudio.current.currentTime = 0;
+            }
+        } else {
+            setFindMatch(true);
+
+            matchTimeoutRef.current = setTimeout(() => {
+                setMatchFound(true);
+
+                matchAudio.current = new Audio("audio/matchstart.wav");
+                const playPromise = matchAudio.current.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.warn('Playback error:', error);
+                    });
+                }
+
+                startGameTimeoutRef.current = setTimeout(() => {
+                    startGame();
+                }, 5000);
+            }, 7300);
+        }
+    };
+
+    useEffect(() => {
+        if (findMatch) {
+            const interval = setInterval(() => {
+                setSeconds(prev => prev + 1);
+            }, 1000);
+            return () => clearInterval(interval);
+        }
+    }, [findMatch]);
+
+
 
     return (
         <div id="MainMenu">
-            {/* <img src="/test/backimg.png" alt="gfdgfd" /> */}
-
+            <img src="/images/mainMenuback.jpg" alt="gfdgfd" />
             <nav>
-                <ul>
-                    <li className={page === 0 ? "active" : ""}>
-                        <span>
-                            <img src="/images/rainbow-six-siege-logo.png" alt="logo" />
-                        </span>
-                        <div className="bar" />
-                    </li>
-                    <li className={page === 1 ? "active" : ""}>
-                        <span>
-                            OPERATORS
-                        </span>
-                        <div className="bar" />
-                    </li>
-                    <li className={page === 2 ? "active" : ""}>
-                        <span>
-                            LOCKER
-                        </span>
-                        <div className="bar" />
-                    </li>
-                    <li className={page === 3 ? "active" : ""}>
-                        <span>
-                            CAREER
-                        </span>
-                        <div className="bar" />
-                    </li>
-                    <li className={page === 4 ? "active" : ""}>
-                        <span>
-                            BATTLE PASS
-                        </span>
-                        <div className="bar" />
-                    </li>
-                    <li className={page === 5 ? "active" : ""}>
-                        <span>
-                            SHOP
-                        </span>
-                        <div className="bar" />
-                    </li>
-                </ul>
+                <div id="Starttimer" className={findMatch ? "active" : ""}>
+                    {matchFound ?
+                        (
+                            <>
+                                <h4>MATCH FOUND</h4>
+                            </>
+                        )
+                        :
+                        (
+                            <>
+                                <h4>CROSSPLAY - RANKED</h4>
+                                <div className="timer">
+                                    {Math.floor(seconds / 60)}:{String(seconds % 60).padStart(2, '0')}
+                                </div>
+                            </>
+                        )}
+                </div>
+                <div id="navbox">
+                    <ul>
+                        <li
+                            className={page === 0 ? "active" : ""}
+                            onClick={() => setPage(0)}
+                        >
+                            <span>
+                                <img src="/images/rainbow-six-siege-logo.png" alt="logo" />
+                            </span>
+                            <div className="bar" />
+                        </li>
+                        <li
+                            className={page === 1 ? "active" : ""}
+                            onClick={() => setPage(1)}
+                        >
+                            <span>
+                                OPERATORS
+                            </span>
+                            <div className="bar" />
+                        </li>
+                        <li
+                            className={page === 2 ? "active" : ""}
+                            onClick={() => setPage(2)}
+                        >
+                            <span>
+                                LOCKER
+                            </span>
+                            <div className="bar" />
+                        </li>
+                        <li
+                            className={page === 3 ? "active" : ""}
+                            onClick={() => setPage(3)}
+                        >
+                            <span>
+                                CAREER
+                            </span>
+                            <div className="bar" />
+                        </li>
+                        <li
+                            className={page === 4 ? "active" : ""}
+                            onClick={() => setPage(4)}
+                        >
+                            <span>
+                                BATTLE PASS
+                            </span>
+                            <div className="bar" />
+                        </li>
+                        <li
+                            className={page === 5 ? "active" : ""}
+                            onClick={() => setPage(5)}
+                        >
+                            <span>
+                                SHOP
+                            </span>
+                            <div className="bar" />
+                        </li>
+                    </ul>
 
-                <menu>
-                    <div className="user">
-                        <div className="profile">
-                            <img className="profileImg" src="/images/profile.png" alt="profile" />
+                    <menu>
+                        <div className="user">
+                            <div className="profile">
+                                <img className="profileImg" src="/images/profile.png" alt="profile" />
+                            </div>
+                            <div className="member">
+                                <img className="memberImg" src="/images/member.png" alt="member" />
+                            </div>
+                            <div className="rank">
+                                <img className="rankImg" src="/images/champ.png" alt="rank" />
+                            </div>
+                            <div className="level">
+                                <span className="levelText">347</span>
+                                <img className="levelImg" src="/images/level.png" alt="level" />
+                            </div>
+                            <div className="team">
+                                <span className="teamText">1/5</span>
+                                <img className="teamImg" src="/images/group.png" alt="team" />
+                            </div>
                         </div>
-                        <div className="member">
-                            <img className="memberImg" src="/images/member.png" alt="member" />
-                        </div>
-                        <div className="rank">
-                            <img className="rankImg" src="/images/champ.png" alt="rank" />
-                        </div>
-                        <div className="level">
-                            <span className="levelText">500</span>
-                            <img className="levelImg" src="/images/level.png" alt="level" />
-                        </div>
-                        <div className="team">
-                            <span className="teamText">1/5</span>
-                            <img className="teamImg" src="/images/group.png" alt="team" />
-                        </div>
-                    </div>
 
-                    <div id="monney">
-                        <div className="Renown">
-                            <img src="/images/Renown.png" alt="Renown" />
-                            <span>150 000</span>
+                        <div id="monney">
+                            <div className="Renown">
+                                <img src="/images/Renown.png" alt="Renown" />
+                                <span>143 494</span>
+                            </div>
+                            <div className="Credits">
+                                <img src="/images/credits.png" alt="Credits" />
+                                <span>31 256</span>
+                            </div>
                         </div>
-                        <div className="Credits">
-                            <img src="/images/credits.png" alt="Credits" />
-                            <span>35 000</span>
-                        </div>
-                    </div>
 
-                    <div id="settings">
-                        <img src="/images/settings.png" alt="settings" />
-                    </div>
-                </menu>
-            </nav>
+                        <div id="settings">
+                            <img src="/images/settings.png" alt="settings" />
+                        </div>
+                    </menu>
+                </div>
+            </nav >
 
             <div id="menuUI">
                 <div className="play">
-                    <button className="button-nem">
-                        <h4>PLAY</h4>
+                    <button className={`button-nem ${findMatch ? "active1" : ""}`}>
+                        {findMatch ? (
+                            <>
+                                <h4>MATCHMAKING</h4>
+                                <div className="dots">
+                                    <div className="dot" />
+                                    <div className="dot" />
+                                    <div className="dot" />
+                                </div>
+                            </>
+                        ) : (
+                            <h4>PLAY</h4>
+                        )}
                     </button>
-                    <button className="button-nem" onClick={() => Startgame()}>
-                        <h4>RANKED</h4>
-                        <p>last played</p>
+                    <button className={`button-nem ${findMatch ? "active2" : ""}`} onClick={() => Startgame()}>
+                        {findMatch ? (
+                            <>
+                                <h4>CANCEL</h4>
+                            </>
+                        ) : (
+                            <>
+                                <p>PLAY AGAIN</p>
+                                <h4>RANKED</h4>
+                            </>
+                        )}
                     </button>
                 </div>
-                <button className="button-pass">PLAY</button>
+                <button className="button-pass">
+                    <div className="pass-back">
+                        <img className="the-back" src="/images/battlepassback.jpg" alt="backpass" />
+                        <img className="the-oppOne" src="/images/PassOppOne.png" alt="backpass" />
+                        <img className="the-oppTwo" src="/images/PassOppTwo.png" alt="backpass" />
+                    </div>
+                    <div className="pass-content">
+                        <div className="battlePasstitles">
+                            <h5>BATTLE PASS</h5>
+                            <h4>PREP PHASE</h4>
+                            <div className="pass-timer">
+                                <p>50d 15h 34m</p>
+                            </div>
+                        </div>
+                        <div className="battlePass-progress">
+                            <div className="pass-levels">
+                                <p>LEVEL <span> 85 / 100</span></p>
+                            </div>
+                            <div className="progress-bar">
+                                <div className="progress" />
+                                <p>500 / 1000</p>
+                            </div>
+                        </div>
+                    </div>
+                </button>
                 <div className="odther">
                     <button className="button-op">
-                        <h4>PLAY</h4>
+                        <h4></h4>
                     </button>
                     <button className="button-op">
-                        <h4>PLAY</h4>
+                        <h4></h4>
                     </button>
                     <button className="button-op">
-                        <h4>PLAY</h4>
+                        <h4></h4>
                     </button>
                     <button className="button-op">
-                        <h4>PLAY</h4>
+                        <h4></h4>
                     </button>
                 </div>
-                <button className="button-news">PLAY</button>
-                <button className="button-intfi">PLAY</button>
+                <button className="button-news"></button>
+                <button className="button-intfi"></button>
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -9,7 +9,10 @@ const RankedStartbanner = ({ side, done }) => {
     }, [])
     return (
         <div className="RankedStartbanner">
-            <img className="RankedStart-img" src="images/backstart.jpg" alt="startRanked" />
+            <div className="RankedStart-back">
+                <img className="RankedStart-img" src="/images/matchStartback.jpg" alt="startRanked" />
+                <img className="RankedStart-opp" src="/images/matchStartOpp.png" alt="startRanked" />
+            </div>
             <div className="RankedStart-title-banner">
                 <div className="RankedStart-sides">
                     <div className="allieTeam">

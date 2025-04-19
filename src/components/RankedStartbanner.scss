@@ -7,29 +7,65 @@
     z-index: 1;
 
 
-    .RankedStart-img {
+    .RankedStart-back {
         z-index: 2;
         position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        animation: ankedStart-img linear 6s;
-        transform: scaleX(1.05) translateX(0);
 
-        @keyframes ankedStart-img {
-            0% {
-                transform: scaleX(1.05) translateX(2.3%);
+        .RankedStart-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scaleX(1.05) translateX(0);
+            animation: ankedStart-img linear 6s;
+
+            @keyframes ankedStart-img {
+                0% {
+                    transform: scaleX(1.05) translateX(2.3%);
+                }
+
+                96% {
+                    transform: scaleX(1.05) translateX(1.6%);
+                }
+
+                100% {
+                    transform: scaleX(1.05) translateX(0%);
+                }
             }
+        }
 
-            96% {
-                transform: scaleX(1.05) translateX(1.6%);
-            }
+        .RankedStart-opp {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            animation: ankedStart-opp linear 6s;
+            @keyframes ankedStart-opp {
+                0% {
+                    transform: translateX(0%);
+                }
 
-            100% {
-                transform: scaleX(1.05) translateX(0%);
+                96% {
+                    transform: translateX(5%);
+                }
+
+                100% {
+                    transform: translateX(12%);
+                }
             }
         }
     }
+
 
     .RankedStart-title-banner {
         z-index: 3;

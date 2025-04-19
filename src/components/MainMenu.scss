@@ -3,6 +3,9 @@
     height: 100dvh;
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: start;
+    align-items: end;
 
     img {
         position: absolute;
@@ -17,227 +20,353 @@
     }
 
     nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-        padding-left: 2.4vw;
-        height: 3.75vw;
-        background-color: rgba(0, 0, 0, 0.5);
+        height: auto;
+        z-index: 3;
 
-        ul {
-            width: auto;
-            height: auto;
-            display: flex;
+        #Starttimer {
+            width: 100%;
+            height: 2.3vw;
+            background-color: #2ba1e7;
+            z-index: 4;
+            display: none;
             justify-content: center;
             align-items: center;
-            flex-direction: row;
-            height: 100%;
-            gap: 1vw;
+            gap: 1.25vw;
+            cursor: default;
 
-            li {
+            h4 {
+                font-family: DINRundschriftBreitItalic2;
+                font-size: 1.4vw;
+                line-height: 1.4vw;
+                color: black;
+            }
+
+            &.active {
                 display: flex;
-                align-items: center;
-                justify-content: end;
-                flex-direction: column;
-                cursor: pointer;
-                height: 100%;
+            }
 
-                span {
-                    width: 100%;
-                    padding: 0 1.2vw;
-                    height: calc(100% - 1vw);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-family: DINRundschriftBreit;
-                    font-size: 1.34vw;
-
-                    img {
-                        z-index: 1;
-                        position: relative;
-                        flex: 1;
-                        width: 90%;
-                        height: 90%;
-                        width: auto;
-                        object-fit: contain;
-                    }
-                }
-
-                .bar {
-                    width: 100%;
-                    height: 0.3vw;
-                    background-color: transparent;
-                }
-
-                &.active {
-                    .bar {
-                        background-color: #04fce4;
-                    }
-                }
-
-                &:hover {
-                    .bar {
-                        background-color: #04fce4;
-                    }
-                }
+            .timer {
+                font-family: DINRundschriftBreit2;
+                background-color: #2f2e2b;
+                color: var(--Renown-color);
+                font-size: 1.2vw;
+                line-height: 1.2vw;
+                padding: 0.2vw 0.5vw;
+                padding-bottom: 0;
+                padding-right: 1.25vw;
+                clip-path: polygon(0 0, 100% 0, 100% 0%, 80% 100%, 0 100%);
             }
         }
 
-        menu {
-            width: auto;
-            height: 100%;
-            padding: 0.6vw 0;
+        #navbox {
+            z-index: 3;
+            width: 100%;
             display: flex;
-            justify-content: end;
+            justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
             flex-direction: row;
-            gap: 0.4vw;
+            padding-left: 2.5vw;
+            padding-right: 1vw;
+            height: 3.75vw;
+            background-color: rgba(0, 0, 0, 0.5);
 
-            .user {
+            ul {
+                width: auto;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                height: 100%;
+                gap: 0.25vw;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    flex-direction: column;
+                    cursor: pointer;
+                    height: 100%;
+                    position: relative;
+                    overflow: hidden;
+
+
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 40%;
+                        transform: translateY(100%);
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-image: linear-gradient(0deg, #04fce4 0%, #04fce300 100%);
+                        transition: transform 150ms ease;
+                    }
+
+                    span {
+                        width: 100%;
+                        padding: 0 1.56vw;
+                        height: calc(100% - 1vw);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-family: DINRundschriftBreit;
+                        font-size: 1.34vw;
+                        transition: transform 50ms ease;
+
+                        img {
+                            z-index: 1;
+                            position: relative;
+                            flex: 1;
+                            width: 70%;
+                            height: 70%;
+                            width: auto;
+                            object-fit: contain;
+                        }
+                    }
+
+                    .bar {
+                        width: 100%;
+                        height: 0.3vw;
+                        background-color: transparent;
+                    }
+
+                    &.active {
+                        span {
+                            transform: scale(1.25);
+                        }
+
+                        .bar {
+                            background-color: #04fce4;
+                        }
+                    }
+
+                    &:hover {
+                        &::after {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+
+            menu {
                 width: auto;
                 height: 100%;
                 display: flex;
                 justify-content: end;
                 align-items: center;
                 flex-direction: row;
-                gap: 0.4vw;
-                cursor: pointer;
 
-                .profile,
-                .member,
-                .rank,
-                .level,
-                .team {
+                .user {
                     width: auto;
                     height: 100%;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    flex-direction: row;
+                    gap: 0.4vw;
                     position: relative;
+                    overflow: hidden;
+                    padding: 0.6vw 0.75vw;
+
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 40%;
+                        transform: translateY(100%);
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-image: linear-gradient(0deg, #04fce4 0%, #04fce300 100%);
+                        transition: transform 150ms ease;
+                    }
+
+                    &:hover {
+                        &::after {
+                            transform: translateY(0);
+                        }
+                    }
+
+                    .profile,
+                    .member,
+                    .rank,
+                    .level,
+                    .team {
+                        width: auto;
+                        height: 100%;
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .profileImg,
+                        .rankImg,
+                        .levelImg,
+                        .teamImg {
+                            height: 95%;
+                            width: 95%;
+                            position: relative;
+                            z-index: 1;
+                            object-fit: contain;
+                        }
+
+                        .profileImg {
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .levelText {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -60%);
+                            font-family: DINRundschriftBreit;
+                            letter-spacing: 0.1vw;
+                            font-size: 1.4vw;
+                        }
+
+                        .memberImg {
+                            height: 85%;
+                            width: 85%;
+                            position: relative;
+                            z-index: 1;
+                            object-fit: contain;
+                        }
+                    }
+
+                    .team {
+                        display: flex;
+                        flex-direction: column-reverse;
+                        gap: 0;
+                        height: 100%;
+
+                        .teamImg {
+                            height: 65%;
+                            width: 100%;
+                            position: relative;
+                            object-fit: contain;
+                            flex: 1;
+                        }
+
+                        .teamText {
+                            height: auto;
+                            font-family: DINRundschriftBreit;
+                            font-size: 1vw;
+                            letter-spacing: 0.1vw;
+                            line-height: 1vw;
+                        }
+                    }
+                }
+
+                #monney {
+                    width: auto;
+                    min-width: 7vw;
+                    height: 100%;
+                    border-left: 1.6px solid rgba(128, 128, 128, 0.5);
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    flex-direction: column;
+                    position: relative;
+                    overflow: hidden;
+                    padding: 0.6vw 0.75vw;
 
-                    .profileImg,
-                    .rankImg,
-                    .levelImg,
-                    .teamImg {
-                        height: 95%;
-                        width: 95%;
-                        position: relative;
-                        z-index: 1;
-                        object-fit: contain;
-                    }
-
-                    .profileImg {
+                    &::after {
+                        content: "";
                         width: 100%;
-                        height: 100%;
-                    }
-
-                    .levelText {
+                        height: 40%;
+                        transform: translateY(100%);
                         position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -60%);
-                        font-family: DINRundschriftBreit;
-                        letter-spacing: 0.1vw;
-                        font-size: 1.4vw;
+                        bottom: 0;
+                        left: 0;
+                        background-image: linear-gradient(0deg, #04fce4 0%, #04fce300 100%);
+                        transition: transform 150ms ease;
                     }
 
-                    .memberImg {
-                        height: 85%;
-                        width: 85%;
-                        position: relative;
-                        z-index: 1;
-                        object-fit: contain;
+                    &:hover {
+                        &::after {
+                            transform: translateY(0);
+                        }
                     }
-                }
 
-                .team {
-                    display: flex;
-                    flex-direction: column-reverse;
-                    gap: 0;
-                    height: 100%;
-
-                    .teamImg {
-                        height: 65%;
+                    .Renown,
+                    .Credits {
                         width: 100%;
-                        position: relative;
-                        object-fit: contain;
-                        flex: 1;
+                        height: 50%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 0.3vw;
+                        padding: 0 0.3vw;
+                        z-index: 1;
+
+                        img {
+                            position: relative;
+                            width: auto;
+                            height: 80%;
+                            object-fit: contain;
+                            z-index: 1;
+                        }
+
+                        span {
+                            font-size: 1vw;
+                            line-height: 1vw;
+                            font-family: DINRundschriftBreit;
+                            color: var(--Renown-color);
+                        }
                     }
 
-                    .teamText {
-                        height: auto;
-                        font-family: DINRundschriftBreit;
-                        font-size: 1vw;
-                        letter-spacing: 0.1vw;
-                        line-height: 1vw;
+                    .Credits {
+                        span {
+                            color: var(--Credits-color);
+                        }
                     }
                 }
-            }
 
-            #monney {
-                width: auto;
-                min-width: 6.5vw;
-                height: 100%;
-                border-left: 1.6px solid rgba(128, 128, 128, 0.5);
-                margin-left: 0.2vw;
-                padding: 0 0.6vw;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
+                #settings {
+                    width: 4vw;
+                    height: 100%;
+                    border-left: 1.6px solid rgba(128, 128, 128, 0.5);
+                    position: relative;
+                    overflow: hidden;
+                    padding: 0.6vw 0.5vw;
 
-                .Renown,
-                .Credits {
-                    width: 100%;
-                    height: 50%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: start;
-                    align-items: center;
-                    gap: 0.3vw;
-                    cursor: pointer;
-                    padding: 0 0.3vw;
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 40%;
+                        transform: translateY(100%);
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-image: linear-gradient(0deg, #04fce4 0%, #04fce300 100%);
+                        transition: transform 150ms ease;
+                    }
+
+                    &:hover {
+                        &::after {
+                            transform: translateY(0);
+                        }
+                    }
 
                     img {
                         position: relative;
-                        width: auto;
-                        height: 80%;
+                        width: 100%;
+                        height: 100%;
                         object-fit: contain;
                         z-index: 1;
                     }
-
-                    span {
-                        font-size: 1vw;
-                        line-height: 1vw;
-                        font-family: DINRundschriftBreit;
-                        color: var(--Renown-color);
-                    }
-                }
-
-                .Credits {
-                    span {
-                        color: var(--Credits-color);
-                    }
-                }
-            }
-
-            #settings {
-                width: 3.8vw;
-                height: 100%;
-                border-left: 1.6px solid rgba(128, 128, 128, 0.5);
-
-                img {
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                    z-index: 1;
-                    cursor: pointer;
                 }
             }
         }
+
     }
 
     #menuUI {
@@ -250,6 +379,7 @@
         align-items: start;
         flex-direction: column;
         gap: 1dvh;
+        z-index: 2;
 
         .play,
         .odther {
@@ -268,7 +398,7 @@
                 padding: 0;
                 margin: 0;
                 width: 27.5dvh;
-                height: 6.1vw;
+                height: 11dvh;
                 padding: 1.5dvh 2dvh;
                 font-size: 4dvh;
                 line-height: 4dvh;
@@ -277,21 +407,111 @@
                 color: black;
                 font-family: DINRundschriftBreitItalic2;
                 cursor: pointer;
-                transition: transform ease 20ms;
+                transition: transform ease 100ms, background-color ease 100ms;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    bottom: 0.9dvh;
+                    left: 0;
+                    width: 100%;
+                    height: 40%;
+                    background-image: linear-gradient(0deg, #04fce4 0%, #04fce300 100%);
+                    transition: opacity ease 100ms;
+                    opacity: 0;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1dvh;
+                    background-color: #04fce4;
+                    transition: opacity ease 100ms;
+                    opacity: 0;
+                }
 
                 p {
                     font-size: 3dvh;
                     line-height: 3dvh;
                 }
 
+                &.active1 {
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .dots {
+                        display: flex;
+                        gap: 0.5vw;
+
+
+                        .dot {
+                            width: 5px;
+                            height: 5px;
+                            background-color: transparent;
+                            animation: loading 1.5s ease infinite;
+
+                            &:nth-child(2) {
+                                animation-delay: 0.5s;
+                            }
+
+                            &:nth-child(3) {
+                                animation-delay: 1s;
+                            }
+
+                            @keyframes loading {
+                                0% {
+                                    background-color: transparent;
+                                    transform: scale(1);
+                                }
+
+                                45% {
+                                    background-color: #2ba1e7;
+                                    transform: scale(1.4);
+                                }
+
+                                55% {
+                                    background-color: #2ba1e7;
+                                    transform: scale(1.4);
+                                }
+
+                                100% {
+                                    background-color: transparent;
+                                    transform: scale(1);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.active2 {
+                    justify-content: start;
+                    align-items: center;
+                    flex-direction: row;
+                }
+
                 &:hover {
-                    transform: scale(1.2);
-                    background-color: #04fce4;
+                    transform: scaleX(1.15) scaleY(1.15);
+                    background-color: #2ba1e7;
+                    z-index: 5;
+
+                    &::after,
+                    &::before {
+                        opacity: 1;
+                    }
                 }
             }
 
             .button-op {
-                height: 4.5vw;
+                height: 8dvh;
+
+                &:hover {
+                    transform: scaleX(1.15) scaleY(1.3);
+                }
             }
         }
 
@@ -305,7 +525,7 @@
             padding: 0;
             margin: 0;
             width: calc(55dvh + 1dvh);
-            height: 23dvh;
+            height: 21.2dvh;
             padding: 1.5dvh 2dvh;
             font-size: 4dvh;
             line-height: 4dvh;
@@ -317,11 +537,279 @@
         }
 
         .button-news {
-            height: 25dvh;
+            height: 24.6dvh;
+        }
+
+        .button-pass {
+            padding: 0;
+            position: relative;
+
+            .pass-back {
+                width: 100%;
+                max-width: 100%;
+                height: 100%;
+                position: absolute;
+                overflow: hidden;
+                background-color: transparent;
+                transition: background-color 200ms ease;
+
+                .the-back {
+                    z-index: 1;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 200ms ease;
+                    transform-origin: right;
+                    -webkit-mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 40%);
+                    mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 40%);
+                    background-size: 100% 100%;
+                }
+
+                .the-oppOne {
+                    z-index: 3;
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    transform: translateX(-170%);
+                    width: auto;
+                    height: 100%;
+                    object-fit: contain;
+                    transition: transform 200ms ease;
+                }
+
+                .the-oppTwo {
+                    z-index: 2;
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    transform: translateX(-100%);
+                    width: auto;
+                    height: 100%;
+                    object-fit: contain;
+                    transition: transform 200ms ease;
+                }
+
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                bottom: 0.45vw;
+                left: 0;
+                width: 100%;
+                height: 25%;
+                background-image: linear-gradient(0deg, #04fce4 0%, #04fce300 100%);
+                opacity: 0;
+                transition: opacity ease 100ms;
+                z-index: 4;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 0.5vw;
+                background-color: #04fce4;
+                opacity: 0;
+                transition: opacity ease 100ms;
+                z-index: 4;
+            }
+
+            .pass-content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 5;
+                width: 100%;
+                height: 100%;
+
+                .battlePasstitles {
+                    position: absolute;
+                    top: 1.5dvh;
+                    left: 2dvh;
+                    width: auto;
+                    height: auto;
+
+                    h5,
+                    h4 {
+                        font-size: 2.8dvh;
+                        line-height: 2.8dvh;
+                        color: white;
+                        text-align: start;
+                        font-family: DINRundschriftBreitItalic2;
+                    }
+
+                    h4 {
+                        font-size: 4.2dvh;
+                        line-height: 4.2dvh;
+                        color: white;
+                    }
+
+                    .pass-timer {
+                        height: auto;
+                        width: auto;
+                        background-color: var(--Renown-color);
+                        padding: 0.3dvh 2dvh;
+                        padding-right: 3dvh;
+                        clip-path: polygon(0 0, 100% 0, 100% 0%, 85% 100%, 0 100%);
+
+                        p {
+                            font-size: 2.2dvh;
+                            line-height: 2dvh;
+                            font-family: DINRundschriftBreit2;
+                            color: black;
+                            margin-top: 0.2dvh;
+                            text-align: start;
+                        }
+                    }
+                }
+
+                .battlePass-progress {
+                    position: absolute;
+                    bottom: 1.5dvh;
+                    right: 2dvh;
+                    width: auto;
+                    height: auto;
+
+                    .pass-levels {
+                        width: auto;
+                        height: auto;
+                        display: flex;
+                        justify-content: end;
+                        align-items: end;
+                        position: relative;
+
+                        p {
+                            display: flex;
+                            gap: 1dvh;
+                            color: white;
+                            font-family: DINRundschriftBreitItalic2;
+                            font-size: 4dvh;
+
+                            span {
+                                font-family: DINRundschriftBreit;
+                            }
+                        }
+                    }
+
+                    .progress-bar {
+                        width: 26dvh;
+                        height: 3dvh;
+                        background-color: rgba(255, 255, 255, 0.5);
+                        display: flex;
+                        justify-content: start;
+                        align-items: start;
+                        position: relative;
+
+                        .progress {
+                            width: 50%;
+                            height: 100%;
+                            background-image: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(192, 131, 0) 100%);
+                        }
+
+                        p {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: auto;
+                            height: 100%;
+                            font-size: 2.4dvh;
+                            line-height: 2.4dvh;
+                            transform: translateY(5%);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0 1dvh;
+                            font-family: DINRundschriftBreit;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .pass-back {
+                    background-color: #2ba1e7;
+
+                    .the-back {
+                        transform: scale(1.05);
+                        background-image: linear-gradient(90deg, #04fce3 0%, #04fce300 100%);
+                    }
+
+                    .the-oppOne {
+                        z-index: 3;
+                        position: absolute;
+                        top: 0;
+                        left: 100%;
+                        transform: translateX(-170%) scale(1.15);
+                        width: auto;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                    .the-oppTwo {
+                        z-index: 2;
+                        position: absolute;
+                        top: 0;
+                        left: 100%;
+                        transform: translateX(-90%) scale(1.1);
+                        width: auto;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                }
+
+                &::before,
+                &::after {
+                    opacity: 1;
+                }
+            }
         }
 
         .button-intfi {
-            height: 6dvh;
+            height: 5.5dvh;
+            transform-origin: center center;
+            transition: transform ease 100ms, background-color ease 100ms;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                bottom: 0.45vw;
+                left: 0;
+                width: 100%;
+                height: 40%;
+                background-image: linear-gradient(0deg, #04fce4 0%, #04fce300 100%);
+                opacity: 0;
+                transition: opacity ease 100ms;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 0.5vw;
+                background-color: #04fce4;
+                opacity: 0;
+                transition: opacity ease 100ms;
+            }
+
+            &:hover {
+                transform: scaleX(1.075) scaleY(1.3);
+                background-color: #2ba1e7;
+
+                &::after,
+                &::before {
+                    opacity: 1;
+                }
+            }
         }
     }
 

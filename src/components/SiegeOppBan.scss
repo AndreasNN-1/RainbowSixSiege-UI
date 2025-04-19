@@ -312,14 +312,14 @@
               width: 100%;
               height: 100%;
               padding: 0.1vw;
-              animation: oppbanIcon ease-out 1s;
               filter: grayscale(100%);
+              animation: oppbanIcon123 ease-out 0.6s;
 
-              @keyframes oppbanIcon {
+              @keyframes oppbanIcon123 {
                 0% {
-                  transform: scale(1.2);
+                  transform: scale(1.4);
                 }
-
+  
                 100% {
                   transform: scale(1);
                 }
@@ -1612,8 +1612,9 @@
                   color: rgba(255, 255, 255, 1);
                   text-wrap: nowrap;
                 }
+
                 .alttest {
-                  height:   vw;
+                  height: vw;
                   display: flex;
                   justify-content: start;
                   align-items: center;
