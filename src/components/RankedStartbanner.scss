@@ -52,11 +52,11 @@
             animation: ankedStart-opp linear 6s;
             @keyframes ankedStart-opp {
                 0% {
-                    transform: translateX(0%);
+                    transform: translateX(5%);
                 }
 
                 96% {
-                    transform: translateX(5%);
+                    transform: translateX(7%);
                 }
 
                 100% {

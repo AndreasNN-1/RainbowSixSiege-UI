@@ -12,11 +12,23 @@ const MainMenu = ({ startAudio, startGame }) => {
     const menuAudioRef = useRef(null);
     const matchAudio = useRef(null);
 
+    const playHoverSound = () => {
+        const sound = new Audio("/audio/hover.wav");
+        sound.volume = 0.08;
+        sound.play().catch(err => console.warn("Hover sound error:", err));
+    };
+
+    const playClickSound = () => {
+        const sound = new Audio("/audio/click.wav");
+        sound.volume = 0.5;
+        sound.play().catch(err => console.warn("Click sound error:", err));
+    };
+
     useEffect(() => {
         if (!startAudio) return;
 
         const audio = new Audio("audio/mainmenu.wav");
-        audio.volume = 0.02;
+        audio.volume = 0.025;
         audio.loop = true;
         menuAudioRef.current = audio;
 
@@ -200,7 +212,12 @@ const MainMenu = ({ startAudio, startGame }) => {
 
             <div id="menuUI">
                 <div className="play">
-                    <button className={`button-nem ${findMatch ? "active1" : ""}`}>
+                    <button
+                        className={`button-nem ${findMatch ? "active1" : ""}`}
+                        onMouseEnter={playHoverSound}
+                        onClick={() => {
+                            playClickSound();
+                        }}>
                         {findMatch ? (
                             <>
                                 <h4>MATCHMAKING</h4>
@@ -214,7 +231,14 @@ const MainMenu = ({ startAudio, startGame }) => {
                             <h4>PLAY</h4>
                         )}
                     </button>
-                    <button className={`button-nem ${findMatch ? "active2" : ""}`} onClick={() => Startgame()}>
+                    <button
+                        className={`button-nem ${findMatch ? "active2" : ""}`}
+                        onMouseEnter={playHoverSound}
+                        onClick={() => {
+                            playClickSound();
+                            Startgame();
+                        }}
+                    >
                         {findMatch ? (
                             <>
                                 <h4>CANCEL</h4>
@@ -227,7 +251,12 @@ const MainMenu = ({ startAudio, startGame }) => {
                         )}
                     </button>
                 </div>
-                <button className="button-pass">
+                <button className="button-pass"
+                    onMouseEnter={playHoverSound}
+                    onClick={() => {
+                        playClickSound();
+                    }}
+                >
                     <div className="pass-back">
                         <img className="the-back" src="/images/battlepassback.jpg" alt="backpass" />
                         <img className="the-oppOne" src="/images/PassOppOne.png" alt="backpass" />
@@ -253,21 +282,73 @@ const MainMenu = ({ startAudio, startGame }) => {
                     </div>
                 </button>
                 <div className="odther">
-                    <button className="button-op">
-                        <h4></h4>
+                    <button className="button-op"
+                        onMouseEnter={playHoverSound}
+                        onClick={() => {
+                            playClickSound();
+                        }}
+                    >
+                        <img src="/images/packs.png" alt="packs" />
+                        <div className="texts">
+                            <p>PACKS</p>
+                            <h4><span>X</span>65</h4>
+                        </div>
                     </button>
-                    <button className="button-op">
-                        <h4></h4>
+                    <button className="button-op"
+                        onMouseEnter={playHoverSound}
+                        onClick={() => {
+                            playClickSound();
+                        }}
+                    >
+                        <img src="/images/booster.png" alt="booster" className="booster" />
+                        <div className="texts">
+                            <p>BOOSTERS</p>
+                            <h4><span>X</span>37</h4>
+                        </div>
                     </button>
-                    <button className="button-op">
-                        <h4></h4>
+                    <button className="button-op"
+                        onMouseEnter={playHoverSound}
+                        onClick={() => {
+                            playClickSound();
+                        }}
+                    >
+                        <img src="/images/reputation.png" alt="reputation" />
+                        <div className="texts">
+                            <p>REPUTATION</p>
+                            <h4>EXEMPLARY</h4>
+                        </div>
                     </button>
-                    <button className="button-op">
-                        <h4></h4>
+                    <button className="button-op ubi">
+                        <img src="/images/ubiBack.jpg" alt="ubiBack" />
+                        <div className="boxA">
+                            
+                        </div>
+                        <div className="theTexts">
+                            <h5>UBISOFT</h5>
+                            <p>CONNECT</p>
+                        </div>
                     </button>
                 </div>
-                <button className="button-news"></button>
-                <button className="button-intfi"></button>
+                <button className="button-news"
+                    onMouseEnter={playHoverSound}
+                    onClick={() => {
+                        playClickSound();
+                    }}
+                >
+                    <img src="/images/newSiegeX.webp" alt="SiegeX" />
+                    <p className="title">SIEGE X</p>
+                </button>
+                <button className="button-intfi"
+                    onMouseEnter={playHoverSound}
+                    onClick={() => {
+                        playClickSound();
+                    }}
+                >
+                    <img src="/images/bell.png" alt="bell" />
+                    <div className="texts">
+                        <p>NEWS</p>
+                    </div>
+                </button>
             </div>
         </div >
     );
