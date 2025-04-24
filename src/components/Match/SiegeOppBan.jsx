@@ -355,7 +355,6 @@ const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
                             className="oppbox"
                             onMouseEnter={() => {
                               if (!isBanned) {
-                                console.log(theStuff);
                                 SetpickedOpp(theStuff);
                                 playHoverAudio();
                               }

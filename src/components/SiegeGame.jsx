@@ -5,6 +5,7 @@ import SiegeBanner from "./Match/SiegeBanner";
 import SiegeOppBan from "./Match/SiegeOppBan";
 import RankedStartbanner from "./Match/RankedStartbanner";
 import EndBanPhase from "./Match/endBanPhase";
+import PvpGame from "./Match/PvpGame";
 
 const SiegeGame = () => {
   const [Timer, setTimer] = useState(null);
@@ -113,6 +114,9 @@ const SiegeGame = () => {
         />
       ) : null}
       {phase === 5 ? (
+        <PvpGame />
+      ) : null}
+      {phase === 6 ? (
         <div className="done">
           <h6>Done for now, have a good day</h6>
           <div className="btns">
