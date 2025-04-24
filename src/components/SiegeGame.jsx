@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./SiegeGame.scss";
-import SiegemapBan from "./SiegemapBan";
-import SiegeBanner from "./SiegeBanner";
-import SiegeOppBan from "./SiegeOppBan";
-import RankedStartbanner from "./RankedStartbanner";
-import EndBanPhase from "./endBanPhase";
+import SiegemapBan from "./Match/SiegemapBan";
+import SiegeBanner from "./Match/SiegeBanner";
+import SiegeOppBan from "./Match/SiegeOppBan";
+import RankedStartbanner from "./Match/RankedStartbanner";
+import EndBanPhase from "./Match/endBanPhase";
 
 const SiegeGame = () => {
   const [Timer, setTimer] = useState(null);

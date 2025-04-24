@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./SiegeOppBan.scss";
-import data from "../assets/data/OperatorData.json";
+import data from "../../assets/data/OperatorData.json";
 
 const SiegeOppBan = ({ side, startTimer, timerDone, oppsBans }) => {
   const [oppData, SetoppData] = useState(data);

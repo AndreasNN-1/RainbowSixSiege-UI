@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./SiegemapBan.scss";
-import data from "../assets/data/maps.json";
+import data from "../../assets/data/maps.json";
 
 const SiegemapBan = ({ startTimer, timerDone, map }) => {
   const [maps, setMaps] = useState([]);
